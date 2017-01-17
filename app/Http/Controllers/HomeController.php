@@ -1,0 +1,195 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Page;
+use App\Models\ProductCategory;
+use App\Models\Market;
+use App\Models\Product;
+use App\Models\News;
+use App\Models\Position;
+
+class HomeController extends BaseController
+{
+
+	private function simplePage($key, $showSubnav = false, $extra = [])
+	{
+		$page = Page::with(['bands', 'banners'])->whereType($key)->first();
+
+		$datas = array_merge($extra, [
+			'page' => $page,
+			//'productCategories' => ProductCategory::orderBy('delta')->get(),
+			//'markets' => Market::orderBy('delta')->get(),
+			//'showSubnav' => $showSubnav,
+			'metaDescription' => $page->meta_description,
+		]);
+
+		return $this->renderView('home', $datas);
+	}
+
+	public function home()
+	{
+		return $this->simplePage('home');
+	}
+
+	public function about()
+	{
+		return $this->simplePage('about');
+	}
+
+	public function contact()
+	{
+		return $this->simplePage('contact');
+	}
+
+	private function career($slug)
+	{
+		$career = Position::whereSlug($slug)->first();
+
+		if (! $career) {
+			return abort(404);
+		}
+
+		return $this->renderView('career', [
+			'position' => $career,
+			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'markets' => Market::orderBy('delta')->get(),
+			'showSubnav' => true,
+		]);
+	}
+
+	public function careers($slug = null)
+	{
+		if ($slug) {
+			return $this->career($slug);
+		}
+		return $this->simplePage('careers', false, ['positions' => Position::all()]);
+	}
+
+	public function faa()
+	{
+		return $this->simplePage('faa-repair');
+	}
+
+	public function markets()
+	{
+		$category = Market::first();
+
+		return redirect('/markets/' . $category->slug);
+	}
+
+	public function market($slug)
+	{
+		$category = Market::whereSlug($slug)->with(['bands', 'banners'])->first();
+
+		return $this->renderView('market', [
+			'market' => $category,
+			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'markets' => Market::orderBy('delta')->get(),
+			'showSubnav' => true,
+		]);
+	}
+
+	public function clients()
+	{
+		return $this->simplePage('clients');
+	}
+
+	public function quality()
+	{
+		return $this->simplePage('quality');
+	}
+
+	public function certifications()
+	{
+		return $this->simplePage('certifications');
+	}
+
+	public function platforms()
+	{
+		return $this->simplePage('platforms');
+	}
+
+	public function products()
+	{
+		$category = ProductCategory::first();
+
+		return redirect('/products/' . $category->slug);
+	}
+
+	private function product($slug)
+	{
+		$product = Product::whereSlug($slug)->with(['bands', 'banners', 'product_category'])->first();
+
+		if (! $product) {
+			abort(404);
+		}
+
+		return $this->renderView('product', [
+			'category' => $product->product_category,
+			'product' => $product,
+			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'products' => Product::whereProductCategoryId($product->product_category_id)->orderBy('delta')->get(),
+			'markets' => Market::orderBy('delta')->get(),
+			'showSubnav' => true,
+		]);
+	}
+
+	public function productCategory($slug, $slug2 = null)
+	{
+		$category = ProductCategory::whereSlug($slug)->with(['bands', 'banners'])->first();
+
+		if (! $category) {
+			abort(404);
+		}
+
+		if (! is_null($slug2)) {
+			return $this->product($slug2);
+		}
+
+		return $this->renderView('category', [
+			'category' => $category,
+			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'products' => Product::whereProductCategoryId($category->id)->orderBy('delta')->get(),
+			'markets' => Market::orderBy('delta')->get(),
+			'showSubnav' => true,
+		]);
+	}
+
+	public function newsItem($slug = null)
+	{
+		$news = News::whereSlug($slug)->first();
+
+		if (! $news) {
+			abort(404);
+		}
+
+		return $this->renderView('news-item', [
+			'news' => $news,
+			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'markets' => Market::orderBy('delta')->get(),
+			'showSubnav' => true,
+		]);
+	}
+
+	public function news($slug = null)
+	{
+		$news = News::all();
+
+
+		if (! $news) {
+			abort(404);
+		}
+
+		if (! is_null($slug)) {
+			return $this->newsItem($slug);
+		}
+
+		return $this->renderView('news', [
+			'news' => $news,
+			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'markets' => Market::orderBy('delta')->get(),
+			'showSubnav' => true,
+		]);
+	}
+}
