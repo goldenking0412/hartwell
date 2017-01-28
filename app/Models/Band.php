@@ -25,4 +25,10 @@ class Band extends Model {
         'background',
         'map',
     ];
+
+    public function bandImages()
+    {
+        return $this->belongsToMany('App\Models\BandImage');
+            //->orderBy('delta');
+    }
 }

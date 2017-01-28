@@ -17,26 +17,9 @@
 			</div>
 		@endforeach
 	</div>
+	<div id="swipe-fade"></div>
 </div>
+
 @foreach($category->bands as $band)
-
 	<?= View::make('band', ['band' => $band])->render() ?>
-
 @endforeach
-<?php if ($products): ?>
-	<div class="band clear-both product-category-band clearfix center">
-		@foreach($products as $p)
-			<a class="product-category-item" style="width: calc(100%/<?= count($products)+1 ?>); background-image: url('/products/<?= $p->image ?>');" href="/products/<?= $category->slug ?>/<?= $p->slug ?>">
-				<span><?= $p->title ?></span>
-			</a>
-		@endforeach
-	</div>
-<?php endif; ?>
-<div class="band clear-both product-category-band clearfix center">
-	@foreach($productCategories as $category)
-		<a class="product-category-item" style="width: calc(100%/<?= count($productCategories)+1 ?>); background-image: url('/product-categories/<?= $category->image ?>');" href="/products/<?= $category->slug ?>">
-			<span><?= $category->title ?></span>
-		</a>
-	@endforeach
-</div>
-

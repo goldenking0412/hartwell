@@ -21,6 +21,7 @@ class HomeController extends BaseController
 			//'productCategories' => ProductCategory::orderBy('delta')->get(),
 			//'markets' => Market::orderBy('delta')->get(),
 			//'showSubnav' => $showSubnav,
+			'productCategories' => ProductCategory::all(),
 			'metaDescription' => $page->meta_description,
 		]);
 
@@ -117,42 +118,18 @@ class HomeController extends BaseController
 		return redirect('/products/' . $category->slug);
 	}
 
-	private function product($slug)
+	public function productCategory($slug = null)
 	{
-		$product = Product::whereSlug($slug)->with(['bands', 'banners', 'product_category'])->first();
-
-		if (! $product) {
-			abort(404);
-		}
-
-		return $this->renderView('product', [
-			'category' => $product->product_category,
-			'product' => $product,
-			'productCategories' => ProductCategory::orderBy('delta')->get(),
-			'products' => Product::whereProductCategoryId($product->product_category_id)->orderBy('delta')->get(),
-			'markets' => Market::orderBy('delta')->get(),
-			'showSubnav' => true,
-		]);
-	}
-
-	public function productCategory($slug, $slug2 = null)
-	{
-		$category = ProductCategory::whereSlug($slug)->with(['bands', 'banners'])->first();
+		$category = ProductCategory::whereSlug($slug)->with(['bands.bandImages', 'banners'])->first();
 
 		if (! $category) {
 			abort(404);
 		}
 
-		if (! is_null($slug2)) {
-			return $this->product($slug2);
-		}
-
 		return $this->renderView('category', [
 			'category' => $category,
 			'productCategories' => ProductCategory::orderBy('delta')->get(),
-			'products' => Product::whereProductCategoryId($category->id)->orderBy('delta')->get(),
-			'markets' => Market::orderBy('delta')->get(),
-			'showSubnav' => true,
+			'metaDescription' => $category->meta_description,
 		]);
 	}
 

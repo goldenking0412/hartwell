@@ -41,6 +41,19 @@ function percentageFromTop() {
 }
 
 $(function() {
+
+	window.mySwipe = Swipe(document.getElementById('slider'), {
+		auto: 3000,
+		continuous: true
+	});
+
+	$('.swipe-item-slideshow').each(function() {
+		Swipe(this, {
+			auto: 3000,
+			continuous: true
+		});
+	});
+
 	// var start = 35;
 	var $jet = $('.intro-jet');
 	var $c1 = $('.cloud-1');

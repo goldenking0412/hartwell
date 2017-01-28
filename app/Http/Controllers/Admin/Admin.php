@@ -400,7 +400,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => ProductCategory::find($id)->load(['bands', 'banners'])->toArray(),
+				'item' => ProductCategory::find($id)->load(['bands.bandImages', 'banners'])->toArray(),
 			) );
 		}
 

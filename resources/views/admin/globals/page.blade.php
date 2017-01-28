@@ -106,6 +106,7 @@
             <select class="form-control" ng-model="item.background">
               <option value="FFFFFF">White (#FFFFFF)</option>
               <option value="000000">Black (#000000)</option>
+              <option value="e7e8e9">Grey (#E7E8E9)</option>
             </select>
           </div>
 
@@ -116,7 +117,7 @@
           </div>
           -->
 
-          <div class="form-group" ng-show="item.type == 'image-left-float' || item.type == 'image-left-float'">
+          <div class="form-group" ng-show="item.type == 'image-left-float' || item.type == 'image-right-float'">
             <div image-upload="item.floating" class="text-center well banner-upload-well" directory="floating">
               <a class="btn btn-success full-width">[[ item.image ? 'Change' : 'Upload' ]] Floating Image<span class="icon-upload icon-white"></a>
             </div>
@@ -175,6 +176,7 @@
             <select class="form-control" ng-model="item.background">
               <option value="FFFFFF">White (#FFFFFF)</option>
               <option value="000000">Black (#000000)</option>
+              <option value="e7e8e9">Grey (#E7E8E9)</option>
             </select>
           </div>
 
@@ -185,7 +187,7 @@
           </div>
           -->
 
-          <div class="form-group" ng-show="item.type == 'image-left-float' || item.type == 'image-left-float'">
+          <div class="form-group" ng-show="item.type == 'image-left-float' || item.type == 'image-right-float'">
             <div image-upload="item.floating" class="text-center well banner-upload-well" directory="floating">
               <a class="btn btn-success full-width">[[ item.image ? 'Change' : 'Upload' ]] Floating Image<span class="icon-upload icon-white"></a>
             </div>

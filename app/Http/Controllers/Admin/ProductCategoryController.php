@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Band;
+use App\Models\BandImage;
 use App\Models\Banner;
 use Input;
 
@@ -63,22 +64,55 @@ class ProductCategoryController extends ResourceController {
 					$found = Band::find( $band->id );
 					$found->update(array(
 						'body' => @$band->body,
-						//'page_id' => $item->id,
+						'body_2' => @$band->body_2,
+						'body_3' => @$band->body_3,
+						'page_id' => $item->id,
 						'delta' => $band->delta,
 						'type' => $band->type,
-						'dark' => (int) $band->dark,
+						'background' => $band->background,
 						'image' => @$band->image,
+						'floating' => @$band->floating,
+						'map' => @$band->map,
 					));
 				} else {
 					$new = Band::create( array(
 						'body' => @$band->body,
-						//'page_id' => $item->id,
+						'body_2' => @$band->body_2,
+						'body_3' => @$band->body_3,
+						'page_id' => $item->id,
 						'delta' => $band->delta,
 						'type' => $band->type,
-						'dark' => (int) $band->dark,
+						'background' => $band->background,
 						'image' => @$band->image,
+						'floating' => @$band->floating,
+						'map' => @$band->map,
 					) );
 					$ids[] = $new->id;
+				}
+
+				$band_image_ids = [];
+
+				if (isset($band->band_images) && is_array($band->band_images)) {
+					foreach ($band->band_images as $band_image) {
+						if (property_exists($band_image, 'id')) {
+							$bi = BandImage::find($band_image->id);
+							$bi->update([
+								'image' => @$band_image->image,
+							]);
+						} else {
+							$bi = BandImage::create([
+								'image' => @$band_image->image,
+							]);
+						}
+						$band_image_ids[] = $bi->id;
+					}
+				}
+
+				if (isset($found)) {
+					$found->bandImages()->sync($band_image_ids);
+				}
+				if (isset($new)) {
+					$new->bandImages()->sync($band_image_ids);
 				}
 			}
 		}

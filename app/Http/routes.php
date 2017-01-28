@@ -36,6 +36,8 @@ Route::group( array( 'prefix' => 'admin' ), function() {
 Route::controller( 'admin', 'Admin\Admin' );
 
 Route::get('/', 'HomeController@home');
+Route::get('/products', 'HomeController@products');
+Route::get('/products/{slug?}', 'HomeController@productCategory');
 
 // Products, News, Careers, Contact
 

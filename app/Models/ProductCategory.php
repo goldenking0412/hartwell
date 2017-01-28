@@ -16,7 +16,10 @@ class ProductCategory extends Model {
         'delta',
         'title',
         'image',
+        'banner',
+        'headline',
         'slug',
+        'meta_description',
     ];
 
     public function bands()

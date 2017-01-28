@@ -16,6 +16,7 @@ class BaseController extends Controller
 				//'showSubnav' => $data['showSubnav'],
 				'metaDescription' => @$data['metaDescription'],
 				'page' => @$data['page'],
+				'globalData' => $data,
 			]);
 	}
 }

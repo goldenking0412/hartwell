@@ -38,56 +38,36 @@
 					About
 				</a>
 				<span class="header-separator">&nbsp;</span>
-				<a class="header-item" href="/">
+				<a class="header-item" href="/capabilities">
 					Capabilities
 				</a>
 				<span class="header-separator">&nbsp;</span>
-				<a class="header-item" href="/">
+				<a class="header-item" href="/products">
 					Products
 				</a>
 				<span class="header-separator">&nbsp;</span>
-				<a class="header-item" href="/">
+				<a class="header-item" href="/platforms">
 					Platforms
 				</a>
 				<span class="header-separator">&nbsp;</span>
-				<a class="header-item" href="/">
+				<a class="header-item" href="/support">
 					Support
 				</a>
 			</div>
 		</div>
-		<div class="landing-strip-wrapper">
-			<div class="intro-jet"></div>
-			<div class="cloud-1"></div>
-			<div class="cloud-2"></div>
-			<div class="cloud-3"></div>
-			<div class="cloud-4"></div>
-			<div class="white-drift"></div>
-			<div class="landing-strip-text">
-				<div class="landing-strip-text-line">Hartwell Corporation</div>
-				<div class="landing-strip-text-line">is the Market Leader</div>
-				<div class="landing-strip-text-line">for Latches & Latching Systems</div>
-				<div class="landing-strip-text-line">used in Aerospace, Defense & Commercial Aircraft</div>
-			</div>
-		</div>
-
 		<?php if (isset($content)): ?>
 			<?= $content ?>
 		<?php endif; ?>
 
 		<div class="product-types outer">
-			<?php foreach ([
-				['latches', 'latches'],
-				['hinges', 'hinges'],
-				['hold open rods', 'hold-open-rods'],
-				['systems', 'systems'],
-			] as $productType): ?>
+			<?php foreach ($globalData['productCategories'] as $productType): ?>
 
-			<div class="product-type">
+			<a href="/products/<?= $productType->slug ?>" class="product-type">
 				<div class="product-type-label">
-					<?= $productType[0] ?>
+					<?= $productType->title ?>
 				</div>
-				<img src="/static/public/img/product-types/<?= $productType[1] ?>.png" />
-			</div>
+				<img src="/product-categories/<?= $productType->image ?>" />
+			</a>
 
 			<?php endforeach; ?>
 		</div>
@@ -103,11 +83,10 @@
 					<a href="#">State-of-the-Art Mfg.</a>
 				</div>
 				<div class="footer-menu-section">
-					<a href="#">Products</a>
-					<a href="#">Latches</a>
-					<a href="#">Hinges</a>
-					<a href="#">Hold Open Rods</a>
-					<a href="#">Systems</a>
+					<a href="/products">Products</a>
+					<?php foreach ($globalData['productCategories'] as $p): ?>
+						<a href="/products/<?= $p->slug ?>"><?= ucwords($p->title) ?></a>
+					<?php endforeach; ?>
 				</div>
 				<div class="footer-menu-section">
 					<a href="#">Platforms</a>

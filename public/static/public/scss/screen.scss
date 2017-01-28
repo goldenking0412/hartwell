@@ -314,8 +314,8 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 }
 
 .para-col-2-right {
-	margin-top: 40px;
-	margin-bottom: 60px;
+	padding-top: 40px;
+	padding-bottom: 60px;
 	overflow: hidden;
 	.img {
 		float: left;
@@ -371,8 +371,8 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 .para-col-right {
 	//height: 500px;
 	overflow: hidden;
-	margin-top: 40px;
-	margin-bottom: 60px;
+	padding-top: 40px;
+	padding-bottom: 60px;
 	.para {
 		float: left;
 		width: 33.333%;
@@ -382,7 +382,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		background-position: left center;
 		position: relative;
 		right: -10%;
-		z-index: -10;
+		z-index: 0;
 		transform: translate(0, 0);
 		transition: transform 10ms linear;
 	}
@@ -440,9 +440,62 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		background-position: right center;
 		position: relative;
 		left: -10%;
-		z-index: -10;
+		z-index: 0;
 	}
 }
+.swipe-item-slideshow {
+	margin-top: 0 !important;
+	min-height: 200px;
+	.swipe-wrap > div {
+		min-height: 200px;
+	}
+}
+.item-slideshow {
+	overflow: hidden;
+	padding-top: 40px;
+	padding-bottom: 60px;
+	.img {
+		float: left;
+		width: 66.666%;
+		height: 100%;
+	}
+	.body {
+		float: left;
+		width: 33.333%;
+		height: 100%;
+		h3 {
+			font-size: 26px;
+			font-weight: bold;
+			color: $blue;
+			color: $black;
+			border-bottom: 1px solid $orange;
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+			width: 80%;
+		}
+		p {
+			font-size: 16px;
+			font-weight: bold;
+			color: $black;
+			color: $blue;
+			line-height: 1.5em;
+			margin-bottom: 25px;
+			max-width: 80%;
+			font-family: 'Josefin Sans', sans-serif;
+			font-weight: 300;
+		}
+		ul {
+			list-style-type: disc;
+			color: $blue;
+			li {
+				margin-left: 20px;
+				margin-bottom: 15px;
+				font-weight: 300;
+			}
+		}
+	}
+}
+
 .whitespace {
 	height: 1000px;
 	width: 100%;
@@ -457,6 +510,8 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 	float: left;
 	width: 25%;
 	text-align: center;
+	text-decoration: none;
+	color: inherit;
 	.product-type-label {
 		text-align: center;
 		font-size: 18px;
@@ -469,4 +524,61 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		position: relative;
 		left: -20px;
 	}
+}
+
+.swipe {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+	margin-top:116px;
+}
+.swipe-wrap {
+	overflow: hidden;
+	position: relative;
+}
+.swipe-wrap > div {
+	float:left;
+	width:100%;
+	position: relative;
+}
+
+.page-headline {
+	padding-top: 6vh;
+	color: $white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#swipe-fade {
+	height: 10vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background-image: linear-gradient(
+		0deg,
+		rgba(255, 255, 255, 1) 1%,
+		rgba(255, 255, 255, 0) 95%
+	);
+}
+
+.hero {
+	height: 80vh;
+	background: url('../img/heros/home.png') no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.hero-box {
+	max-width: 600px;
+	margin: 0 auto;
+	color: $white;
+	margin-top: 6vh;
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
 }

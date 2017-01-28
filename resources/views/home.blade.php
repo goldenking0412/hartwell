@@ -1,3 +1,22 @@
+<?php if ($page->type === 'home'): ?>
+	<div class="landing-strip-wrapper">
+		<div class="intro-jet"></div>
+		<div class="cloud-1"></div>
+		<div class="cloud-2"></div>
+		<div class="cloud-3"></div>
+		<div class="cloud-4"></div>
+		<div class="white-drift"></div>
+		<div class="landing-strip-text">
+			<div class="landing-strip-text-line">Hartwell Corporation</div>
+			<div class="landing-strip-text-line">is the Market Leader</div>
+			<div class="landing-strip-text-line">for Latches & Latching Systems</div>
+			<div class="landing-strip-text-line">used in Aerospace, Defense & Commercial Aircraft</div>
+		</div>
+	</div>
+<?php endif; ?>
+
+<!--
+<div class="outer">
 		<div class="para-col-left">
 			<div
 				class="para"
@@ -121,7 +140,8 @@
 				style="background-image: url('/static/public/img/products-certificates-banner.jpg');"
 			></div>
 		</div>
-
+</div>
+-->
 @foreach($page->bands as $band)
 
 	<?= View::make('band', ['band' => $band])->render() ?>
