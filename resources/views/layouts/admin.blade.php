@@ -55,9 +55,8 @@
 									<?= HTML::menu_link( 'admin/users', 'Users' ) ?>
 								</ul>
 							</li>
-							<?= HTML::menu_link( 'admin/markets', 'Markets' ) ?>
 							<?= HTML::menu_link( 'admin/product-categories', 'Product Categories' ) ?>
-							<?= HTML::menu_link( 'admin/products', 'Products' ) ?>
+							<?= HTML::menu_link( 'admin/platforms', 'Platforms' ) ?>
 						</ul>
 						<p class="navbar-text pull-right"><span class="name">Signed in as <?= Auth::user()->name ?> | </span><a href="/admin/logout" class="navbar-link">Logout</a></p>
 					</div><!--/.nav-collapse -->
