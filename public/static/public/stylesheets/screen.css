@@ -75,7 +75,7 @@ body {
 }
 
 /* line 22, ../scss/screen.scss */
-#footer .footer-menu-section a, #footer .footer-menu-info div, #top-header, #header .header-item, .landing-strip-wrapper .landing-strip-text {
+#footer .footer-menu-section a, #footer .footer-menu-info div, #top-header, #sub-header, #header .header-item, .landing-strip-wrapper .landing-strip-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
@@ -200,6 +200,46 @@ body {
 }
 
 /* line 130, ../scss/screen.scss */
+#sub-header {
+  position: fixed;
+  top: 115px;
+  z-index: 90;
+  background: #f6f7fa;
+  padding: 10px;
+  padding-bottom: 12px;
+  width: 100%;
+  text-align: right;
+}
+/* line 140, ../scss/screen.scss */
+#sub-header span {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 24px;
+  border-right: 1px solid #a9bcc3;
+  width: 1px;
+}
+/* line 150, ../scss/screen.scss */
+#sub-header a {
+  display: inline-block;
+  color: #050100;
+  text-decoration: none;
+  padding: 0 6px;
+  font-size: 14px;
+  font-weight: 100;
+}
+/* line 157, ../scss/screen.scss */
+#sub-header a.active {
+  font-weight: bold;
+}
+/* line 160, ../scss/screen.scss */
+#sub-header a:hover {
+  color: #106799;
+}
+
+/* line 166, ../scss/screen.scss */
 #header {
   background: #f1f4fe;
   height: 80px;
@@ -213,11 +253,11 @@ body {
   -webkit-transition: all 100ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
   transition: all 100ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
-/* line 143, ../scss/screen.scss */
+/* line 179, ../scss/screen.scss */
 #header .inner-outer {
   height: 80px;
 }
-/* line 146, ../scss/screen.scss */
+/* line 182, ../scss/screen.scss */
 #header .header-item {
   display: inline-block;
   height: 80px;
@@ -230,12 +270,12 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
-/* line 153, ../scss/screen.scss */
+/* line 189, ../scss/screen.scss */
 #header .header-item.active, #header .header-item:hover {
   border-top: 1px solid #050100;
   color: #5eb1e3;
 }
-/* line 164, ../scss/screen.scss */
+/* line 200, ../scss/screen.scss */
 #header .header-separator {
   display: inline-block;
   position: relative;
@@ -247,7 +287,7 @@ body {
   width: 1px;
 }
 
-/* line 176, ../scss/screen.scss */
+/* line 212, ../scss/screen.scss */
 #logo {
   display: block;
   position: relative;
@@ -262,7 +302,7 @@ body {
   float: left;
 }
 
-/* line 194, ../scss/screen.scss */
+/* line 230, ../scss/screen.scss */
 .landing-strip-wrapper {
   background-image: url("../img/large-hero-main.jpg");
   background-repeat: no-repeat;
@@ -274,7 +314,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-/* line 204, ../scss/screen.scss */
+/* line 240, ../scss/screen.scss */
 .landing-strip-wrapper .white-drift {
   content: " ";
   display: block;
@@ -286,7 +326,7 @@ body {
   background-image: linear-gradient(0deg, #ffffff 1%, rgba(255, 255, 255, 0) 95%);
   z-index: 106;
 }
-/* line 219, ../scss/screen.scss */
+/* line 255, ../scss/screen.scss */
 .landing-strip-wrapper .intro-jet {
   position: absolute;
   left: calc(50% - 31vw);
@@ -300,7 +340,7 @@ body {
   transform: translate(0, 0) scale(1);
   z-index: 100;
 }
-/* line 237, ../scss/screen.scss */
+/* line 273, ../scss/screen.scss */
 .landing-strip-wrapper .cloud-1 {
   position: absolute;
   margin: 0 auto;
@@ -316,7 +356,7 @@ body {
   opacity: .5;
   z-index: 105;
 }
-/* line 252, ../scss/screen.scss */
+/* line 288, ../scss/screen.scss */
 .landing-strip-wrapper .cloud-2 {
   position: absolute;
   margin: 0 auto;
@@ -332,7 +372,7 @@ body {
   opacity: .6;
   z-index: 95;
 }
-/* line 267, ../scss/screen.scss */
+/* line 303, ../scss/screen.scss */
 .landing-strip-wrapper .cloud-3 {
   position: absolute;
   margin: 0 auto;
@@ -348,7 +388,7 @@ body {
   opacity: .6;
   z-index: 95;
 }
-/* line 282, ../scss/screen.scss */
+/* line 318, ../scss/screen.scss */
 .landing-strip-wrapper .cloud-4 {
   position: absolute;
   margin: 0 auto;
@@ -364,7 +404,7 @@ body {
   opacity: .5;
   z-index: 105;
 }
-/* line 297, ../scss/screen.scss */
+/* line 333, ../scss/screen.scss */
 .landing-strip-wrapper .landing-strip-text {
   position: relative;
   font-size: 2em;
@@ -377,19 +417,19 @@ body {
   text-align: center;
   top: 47vh;
 }
-/* line 309, ../scss/screen.scss */
+/* line 345, ../scss/screen.scss */
 .landing-strip-wrapper .landing-strip-text .landing-strip-text-line {
   margin-bottom: 1em;
   font-style: italic;
 }
 
-/* line 316, ../scss/screen.scss */
+/* line 352, ../scss/screen.scss */
 .para-col-2-right {
   padding-top: 40px;
   padding-bottom: 60px;
   overflow: hidden;
 }
-/* line 320, ../scss/screen.scss */
+/* line 356, ../scss/screen.scss */
 .para-col-2-right .img {
   float: left;
   width: 50%;
@@ -397,13 +437,13 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* line 327, ../scss/screen.scss */
+/* line 363, ../scss/screen.scss */
 .para-col-2-right .body {
   float: left;
   width: 50%;
   height: 100%;
 }
-/* line 331, ../scss/screen.scss */
+/* line 367, ../scss/screen.scss */
 .para-col-2-right .body h3 {
   font-size: 26px;
   font-weight: bold;
@@ -415,7 +455,7 @@ body {
   width: 80%;
   margin-left: 20%;
 }
-/* line 342, ../scss/screen.scss */
+/* line 378, ../scss/screen.scss */
 .para-col-2-right .body p {
   font-size: 16px;
   font-weight: bold;
@@ -428,31 +468,31 @@ body {
   font-weight: 300;
   margin-left: 20%;
 }
-/* line 354, ../scss/screen.scss */
+/* line 390, ../scss/screen.scss */
 .para-col-2-right .body ul {
   list-style-type: disc;
   color: #014d98;
   margin-left: 20%;
 }
-/* line 358, ../scss/screen.scss */
+/* line 394, ../scss/screen.scss */
 .para-col-2-right .body ul > ul {
   margin-left: 20px;
 }
-/* line 361, ../scss/screen.scss */
+/* line 397, ../scss/screen.scss */
 .para-col-2-right .body ul li {
   margin-left: 20px;
   margin-bottom: 15px;
   font-weight: 300;
 }
 
-/* line 370, ../scss/screen.scss */
+/* line 406, ../scss/screen.scss */
 .para-col-left,
 .para-col-right {
   overflow: hidden;
   padding-top: 40px;
   padding-bottom: 60px;
 }
-/* line 376, ../scss/screen.scss */
+/* line 412, ../scss/screen.scss */
 .para-col-left .para,
 .para-col-right .para {
   float: left;
@@ -467,14 +507,14 @@ body {
   transform: translate(0, 0);
   transition: transform 10ms linear;
 }
-/* line 389, ../scss/screen.scss */
+/* line 425, ../scss/screen.scss */
 .para-col-left .body,
 .para-col-right .body {
   float: left;
   width: 33.333%;
   height: 100%;
 }
-/* line 393, ../scss/screen.scss */
+/* line 429, ../scss/screen.scss */
 .para-col-left .body h3,
 .para-col-right .body h3 {
   font-size: 26px;
@@ -486,7 +526,7 @@ body {
   margin-bottom: 10px;
   width: 80%;
 }
-/* line 403, ../scss/screen.scss */
+/* line 439, ../scss/screen.scss */
 .para-col-left .body p,
 .para-col-right .body p {
   font-size: 16px;
@@ -499,20 +539,20 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
-/* line 414, ../scss/screen.scss */
+/* line 450, ../scss/screen.scss */
 .para-col-left .body ul,
 .para-col-right .body ul {
   list-style-type: disc;
   color: #014d98;
 }
-/* line 417, ../scss/screen.scss */
+/* line 453, ../scss/screen.scss */
 .para-col-left .body ul li,
 .para-col-right .body ul li {
   margin-left: 20px;
   margin-bottom: 15px;
   font-weight: 300;
 }
-/* line 424, ../scss/screen.scss */
+/* line 460, ../scss/screen.scss */
 .para-col-left .img,
 .para-col-right .img {
   float: left;
@@ -522,11 +562,11 @@ body {
   background-size: cover;
 }
 
-/* line 435, ../scss/screen.scss */
+/* line 471, ../scss/screen.scss */
 .para-col-right .body h3, .para-col-right .body p {
   margin-left: 20%;
 }
-/* line 439, ../scss/screen.scss */
+/* line 475, ../scss/screen.scss */
 .para-col-right .para {
   background-position: right center;
   position: relative;
@@ -534,35 +574,53 @@ body {
   z-index: 0;
 }
 
-/* line 446, ../scss/screen.scss */
+/* line 482, ../scss/screen.scss */
 .swipe-item-slideshow {
   margin-top: 0 !important;
   min-height: 200px;
+  height: 100%;
 }
-/* line 449, ../scss/screen.scss */
+/* line 486, ../scss/screen.scss */
+.swipe-item-slideshow .swipe-wrap {
+  height: 100%;
+}
+/* line 489, ../scss/screen.scss */
 .swipe-item-slideshow .swipe-wrap > div {
   min-height: 200px;
+  height: 100%;
 }
 
-/* line 453, ../scss/screen.scss */
+/* line 494, ../scss/screen.scss */
 .item-slideshow {
   overflow: hidden;
   padding-top: 40px;
   padding-bottom: 60px;
+  width: 1100px;
 }
-/* line 457, ../scss/screen.scss */
+/* line 499, ../scss/screen.scss */
+.item-slideshow .faux {
+  width: 260px;
+  float: left;
+  height: 100%;
+  display: block;
+}
+/* line 505, ../scss/screen.scss */
 .item-slideshow .img {
   float: left;
-  width: 66.666%;
+  width: 480px;
   height: 100%;
+  min-height: 200px;
 }
-/* line 462, ../scss/screen.scss */
+/* line 512, ../scss/screen.scss */
 .item-slideshow .body {
   float: left;
   width: 33.333%;
+  width: 360px;
   height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
-/* line 466, ../scss/screen.scss */
+/* line 519, ../scss/screen.scss */
 .item-slideshow .body h3 {
   font-size: 26px;
   font-weight: bold;
@@ -573,7 +631,7 @@ body {
   margin-bottom: 10px;
   width: 80%;
 }
-/* line 476, ../scss/screen.scss */
+/* line 529, ../scss/screen.scss */
 .item-slideshow .body p {
   font-size: 16px;
   font-weight: bold;
@@ -585,31 +643,31 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
-/* line 487, ../scss/screen.scss */
+/* line 540, ../scss/screen.scss */
 .item-slideshow .body ul {
   list-style-type: disc;
   color: #014d98;
 }
-/* line 490, ../scss/screen.scss */
+/* line 543, ../scss/screen.scss */
 .item-slideshow .body ul li {
   margin-left: 20px;
   margin-bottom: 15px;
   font-weight: 300;
 }
 
-/* line 499, ../scss/screen.scss */
+/* line 552, ../scss/screen.scss */
 .whitespace {
   height: 1000px;
   width: 100%;
 }
 
-/* line 504, ../scss/screen.scss */
+/* line 557, ../scss/screen.scss */
 .product-types {
   overflow: hidden;
   padding: 100px 0;
 }
 
-/* line 509, ../scss/screen.scss */
+/* line 562, ../scss/screen.scss */
 .product-type {
   float: left;
   width: 25%;
@@ -617,13 +675,13 @@ body {
   text-decoration: none;
   color: inherit;
 }
-/* line 515, ../scss/screen.scss */
+/* line 568, ../scss/screen.scss */
 .product-type .product-type-label {
   text-align: center;
   font-size: 18px;
   padding-bottom: 15px;
 }
-/* line 520, ../scss/screen.scss */
+/* line 573, ../scss/screen.scss */
 .product-type img {
   max-width: 200px;
   height: auto;
@@ -632,28 +690,28 @@ body {
   left: -20px;
 }
 
-/* line 529, ../scss/screen.scss */
+/* line 582, ../scss/screen.scss */
 .swipe {
   overflow: hidden;
   visibility: hidden;
   position: relative;
-  margin-top: 116px;
+  margin-top: 157px;
 }
 
-/* line 535, ../scss/screen.scss */
+/* line 588, ../scss/screen.scss */
 .swipe-wrap {
   overflow: hidden;
   position: relative;
 }
 
-/* line 539, ../scss/screen.scss */
+/* line 592, ../scss/screen.scss */
 .swipe-wrap > div {
   float: left;
   width: 100%;
   position: relative;
 }
 
-/* line 545, ../scss/screen.scss */
+/* line 598, ../scss/screen.scss */
 .page-headline {
   padding-top: 6vh;
   color: #FFF;
@@ -663,7 +721,7 @@ body {
   font-weight: bold;
 }
 
-/* line 554, ../scss/screen.scss */
+/* line 607, ../scss/screen.scss */
 #swipe-fade {
   height: 10vh;
   position: absolute;
@@ -674,7 +732,7 @@ body {
   background-image: linear-gradient(0deg, #ffffff 1%, rgba(255, 255, 255, 0) 95%);
 }
 
-/* line 568, ../scss/screen.scss */
+/* line 621, ../scss/screen.scss */
 .hero {
   height: 80vh;
   background: url("../img/heros/home.png") no-repeat;
@@ -682,7 +740,7 @@ body {
   background-position: center center;
 }
 
-/* line 575, ../scss/screen.scss */
+/* line 628, ../scss/screen.scss */
 .hero-box {
   max-width: 600px;
   margin: 0 auto;
@@ -692,4 +750,23 @@ body {
   font-size: 25px;
   font-weight: bold;
   text-align: center;
+}
+
+/* line 640, ../scss/screen.scss */
+#sidenav .outer {
+  position: relative;
+}
+/* line 643, ../scss/screen.scss */
+#sidenav #sn {
+  position: absolute;
+  top: 100px;
+  width: 230px;
+}
+/* line 647, ../scss/screen.scss */
+#sidenav #sn a {
+  display: block;
+  text-decoration: none;
+  color: #106799;
+  font-size: 23px;
+  line-height: 50px;
 }

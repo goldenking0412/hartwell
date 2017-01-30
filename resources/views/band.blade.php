@@ -1,4 +1,4 @@
-<div style="background-color: #<?= $band->background ?>;">
+<div style="background-color: #<?= $band->background ?>;" class="band-wrapper-outer">
 	<div class="outer">
 		<?php if ($band->type === 'image-right-float'): ?>
 		<div class="para-col-left">
@@ -34,6 +34,7 @@
 
 		<?php if ($band->type === 'item-slideshow'): ?>
 		<div class="item-slideshow">
+			<div class="faux"></div>
 			<div class="body">
 				<?= $band->body ?>
 			</div>

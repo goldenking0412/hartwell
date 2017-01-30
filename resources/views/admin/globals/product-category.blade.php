@@ -109,12 +109,10 @@
             </select>
           </div>
 
-          <!--
           <div class="form-group">
-            <label>Map</label>
-            <input class="form-control" type="text" ng-model="item.map" placeholder="Street Address" />
+            <label>Section Title</label>
+            <input class="form-control" type="text" ng-model="item.section" placeholder="" />
           </div>
-          -->
 
           <div class="form-group" ng-show="item.type == 'image-left-float' || item.type == 'image-right-float'">
             <div image-upload="item.floating" class="text-center well banner-upload-well" directory="floating">
@@ -197,12 +195,10 @@
             </select>
           </div>
 
-          <!--
           <div class="form-group">
-            <label>Map</label>
-            <input class="form-control" type="text" ng-model="item.map" placeholder="Street Address" />
+            <label>Section Title</label>
+            <input class="form-control" type="text" ng-model="item.section" placeholder="" />
           </div>
-          -->
 
           <div class="form-group" ng-show="item.type == 'image-left-float' || item.type == 'image-right-float'">
             <div image-upload="item.floating" class="text-center well banner-upload-well" directory="floating">

@@ -18,9 +18,6 @@ class HomeController extends BaseController
 
 		$datas = array_merge($extra, [
 			'page' => $page,
-			//'productCategories' => ProductCategory::orderBy('delta')->get(),
-			//'markets' => Market::orderBy('delta')->get(),
-			//'showSubnav' => $showSubnav,
 			'productCategories' => ProductCategory::all(),
 			'metaDescription' => $page->meta_description,
 		]);

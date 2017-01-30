@@ -55,6 +55,19 @@
 				</a>
 			</div>
 		</div>
+		<?php if (stristr($currentRoute, 'products/')): ?>
+			<div id="sub-header">
+				<div class="inner-outer">
+					<span class="header-separator">&nbsp;</span>
+					<?php foreach ($globalData['productCategories'] as $productType): ?>
+						<a href="/products/<?= $productType->slug ?>" class="<?= $globalData['category']->id == $productType->id ? 'active' : '' ?>">
+							<?= $productType->title ?>
+						</a>
+						<span class="header-separator">&nbsp;</span>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		<?php if (isset($content)): ?>
 			<?= $content ?>
 		<?php endif; ?>
@@ -64,7 +77,7 @@
 
 			<a href="/products/<?= $productType->slug ?>" class="product-type">
 				<div class="product-type-label">
-					<?= $productType->title ?>
+					<?= ucwords($productType->title) ?>
 				</div>
 				<img src="/product-categories/<?= $productType->image ?>" />
 			</a>

@@ -24,6 +24,7 @@ class Band extends Model {
         'delta',
         'background',
         'map',
+        'section',
     ];
 
     public function bandImages()

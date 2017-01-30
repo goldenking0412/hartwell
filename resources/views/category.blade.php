@@ -19,7 +19,19 @@
 	</div>
 	<div id="swipe-fade"></div>
 </div>
-
+<div id="sidenav">
+	<div class="outer">
+		<div id="sn">
+			@foreach($category->bands as $iii => $band)
+				<?php if (! empty($band->section)): ?>
+					<a href="#" class="band-link" index="<?= (int) $iii ?>">
+						<?= $band->section ?>
+					</a>
+				<?php endif; ?>
+			@endforeach
+		</div>
+	</div>
+</div>
 @foreach($category->bands as $band)
 	<?= View::make('band', ['band' => $band])->render() ?>
 @endforeach

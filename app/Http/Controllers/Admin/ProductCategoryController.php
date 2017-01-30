@@ -73,6 +73,7 @@ class ProductCategoryController extends ResourceController {
 						'image' => @$band->image,
 						'floating' => @$band->floating,
 						'map' => @$band->map,
+						'section' => @$band->section,
 					));
 				} else {
 					$new = Band::create( array(
@@ -86,6 +87,7 @@ class ProductCategoryController extends ResourceController {
 						'image' => @$band->image,
 						'floating' => @$band->floating,
 						'map' => @$band->map,
+						'section' => @$band->section,
 					) );
 					$ids[] = $new->id;
 				}

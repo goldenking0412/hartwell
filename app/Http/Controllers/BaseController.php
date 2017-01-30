@@ -17,6 +17,7 @@ class BaseController extends Controller
 				'metaDescription' => @$data['metaDescription'],
 				'page' => @$data['page'],
 				'globalData' => $data,
+				'currentRoute' => app('request')->route()->getPath(),
 			]);
 	}
 }

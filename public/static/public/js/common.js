@@ -48,10 +48,10 @@ $(function() {
 	});
 
 	$('.swipe-item-slideshow').each(function() {
-		Swipe(this, {
+		$(this).data('__swipe', Swipe(this, {
 			auto: 3000,
 			continuous: true
-		});
+		}));
 	});
 
 	// var start = 35;
@@ -149,7 +149,21 @@ $(function() {
 		});
 	}
 
+	var debounce = null;
+
+	var resetSliders = function() {
+		$('.swipe-item-slideshow').each(function() {
+			var s = $(this).data('__swipe').kill();
+			$(this).data('__swipe', Swipe(this, {
+				auto: 3000,
+				continuous: true
+			}));
+		});
+	};
+
 	$(window).on('resize', function() {
+		clearTimeout(debounce);
+		debounce = setTimeout(resetSliders, 300);
 		window.requestAnimationFrame(function() {
 			$('.para-col-left, .para-col-right, .para-col-2-right').each(function() {
 				var $this = $(this);
@@ -157,6 +171,15 @@ $(function() {
 
 				$this.children(':not(.body)').css({
 					height: $body.height()
+				})
+			});
+
+			$('.item-slideshow').each(function() {
+				var $this = $(this);
+				var $body = $this.find('.body');
+
+				$this.children(':not(.body)').css({
+					height: $body.height() + 100
 				})
 			});
 		});
@@ -168,46 +191,17 @@ $(function() {
 
 	$(window).on('scroll', function() {
 		window.requestAnimationFrame(function() {
-
 			handleHeaderBackground();
-
 			handleHeader();
-
 			handleFloatingItems();
-
-			// var p = z = showPosition();
-			// if (p > 100) {
-			// 	p = 0;
-			// }
-			// var top = start - p;
-			// var scale = p/100;
-			// var opacity = p/100;
-
-			// scale = (scale + .4) * 1.8;
-
-			// if (scale > 2) {
-			// 	scale = 2;
-			// }
-
-			// var transformString = 'translate(0, ' + top + 'vh) scale(' + scale + ')';
-
-			// $jet.css({
-			// 	'transform': transformString,
-			// 	'opacity': (opacity + .3) * 1.2
-			// });
-
-			// z = 60 - z;
-
-			// if (z < 0) {
-			// 	z = 0;
-			// }
-
-			// $c1.css({
-			// 	'left': '-' + (z) + '%'
-			// });
-			// $c2.css({
-			// 	'right': '-' + (z) + '%'
-			// });
 		});
+	});
+
+	$('#sn').find('.band-link').click(function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $now  = $('.band-wrapper-outer').eq(parseInt($this.attr('index')));
+
+		$(document).scrollTop($now.offset().top - 180);
 	});
 });
