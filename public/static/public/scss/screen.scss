@@ -489,6 +489,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 	.swipe-wrap > div {
 		min-height: 200px;
 		height: 100%;
+		background-size: cover;
 	}
 }
 .item-slideshow {
