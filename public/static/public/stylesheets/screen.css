@@ -588,31 +588,32 @@ body {
 .swipe-item-slideshow .swipe-wrap > div {
   min-height: 200px;
   height: 100%;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-/* line 495, ../scss/screen.scss */
+/* line 496, ../scss/screen.scss */
 .item-slideshow {
   overflow: hidden;
   padding-top: 40px;
   padding-bottom: 60px;
   width: 1100px;
 }
-/* line 500, ../scss/screen.scss */
+/* line 501, ../scss/screen.scss */
 .item-slideshow .faux {
   width: 260px;
   float: left;
   height: 100%;
   display: block;
 }
-/* line 506, ../scss/screen.scss */
+/* line 507, ../scss/screen.scss */
 .item-slideshow .img {
   float: left;
   width: 480px;
   height: 100%;
   min-height: 200px;
 }
-/* line 513, ../scss/screen.scss */
+/* line 514, ../scss/screen.scss */
 .item-slideshow .body {
   float: left;
   width: 33.333%;
@@ -621,7 +622,7 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-/* line 520, ../scss/screen.scss */
+/* line 521, ../scss/screen.scss */
 .item-slideshow .body h3 {
   font-size: 26px;
   font-weight: bold;
@@ -632,7 +633,7 @@ body {
   margin-bottom: 10px;
   width: 80%;
 }
-/* line 530, ../scss/screen.scss */
+/* line 531, ../scss/screen.scss */
 .item-slideshow .body p {
   font-size: 16px;
   font-weight: bold;
@@ -644,31 +645,31 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
-/* line 541, ../scss/screen.scss */
+/* line 542, ../scss/screen.scss */
 .item-slideshow .body ul {
   list-style-type: disc;
   color: #014d98;
 }
-/* line 544, ../scss/screen.scss */
+/* line 545, ../scss/screen.scss */
 .item-slideshow .body ul li {
   margin-left: 20px;
   margin-bottom: 15px;
   font-weight: 300;
 }
 
-/* line 553, ../scss/screen.scss */
+/* line 554, ../scss/screen.scss */
 .whitespace {
   height: 1000px;
   width: 100%;
 }
 
-/* line 558, ../scss/screen.scss */
+/* line 559, ../scss/screen.scss */
 .product-types {
   overflow: hidden;
   padding: 100px 0;
 }
 
-/* line 563, ../scss/screen.scss */
+/* line 564, ../scss/screen.scss */
 .product-type {
   float: left;
   width: 25%;
@@ -676,13 +677,13 @@ body {
   text-decoration: none;
   color: inherit;
 }
-/* line 569, ../scss/screen.scss */
+/* line 570, ../scss/screen.scss */
 .product-type .product-type-label {
   text-align: center;
   font-size: 18px;
   padding-bottom: 15px;
 }
-/* line 574, ../scss/screen.scss */
+/* line 575, ../scss/screen.scss */
 .product-type img {
   max-width: 200px;
   height: auto;
@@ -691,7 +692,7 @@ body {
   left: -20px;
 }
 
-/* line 583, ../scss/screen.scss */
+/* line 584, ../scss/screen.scss */
 .swipe {
   overflow: hidden;
   visibility: hidden;
@@ -699,20 +700,20 @@ body {
   margin-top: 157px;
 }
 
-/* line 589, ../scss/screen.scss */
+/* line 590, ../scss/screen.scss */
 .swipe-wrap {
   overflow: hidden;
   position: relative;
 }
 
-/* line 593, ../scss/screen.scss */
+/* line 594, ../scss/screen.scss */
 .swipe-wrap > div {
   float: left;
   width: 100%;
   position: relative;
 }
 
-/* line 599, ../scss/screen.scss */
+/* line 600, ../scss/screen.scss */
 .page-headline {
   padding-top: 6vh;
   color: #FFF;
@@ -722,7 +723,7 @@ body {
   font-weight: bold;
 }
 
-/* line 608, ../scss/screen.scss */
+/* line 609, ../scss/screen.scss */
 #swipe-fade {
   height: 10vh;
   position: absolute;
@@ -733,7 +734,7 @@ body {
   background-image: linear-gradient(0deg, #ffffff 1%, rgba(255, 255, 255, 0) 95%);
 }
 
-/* line 622, ../scss/screen.scss */
+/* line 623, ../scss/screen.scss */
 .hero {
   height: 80vh;
   background: url("../img/heros/home.png") no-repeat;
@@ -741,7 +742,7 @@ body {
   background-position: center center;
 }
 
-/* line 629, ../scss/screen.scss */
+/* line 630, ../scss/screen.scss */
 .hero-box {
   max-width: 600px;
   margin: 0 auto;
@@ -753,17 +754,17 @@ body {
   text-align: center;
 }
 
-/* line 641, ../scss/screen.scss */
+/* line 642, ../scss/screen.scss */
 #sidenav .outer {
   position: relative;
 }
-/* line 644, ../scss/screen.scss */
+/* line 645, ../scss/screen.scss */
 #sidenav #sn {
   position: absolute;
   top: 100px;
   width: 230px;
 }
-/* line 648, ../scss/screen.scss */
+/* line 649, ../scss/screen.scss */
 #sidenav #sn a {
   display: block;
   text-decoration: none;
