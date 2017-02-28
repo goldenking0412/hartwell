@@ -13,19 +13,19 @@
 	<body>
 		<div id="top-header">
 			<div class="outer">
-				<a href="#">News</a>
+				<a href="/news">News</a>
 				<span class="top-header-separator">|</span>
-				<a href="#">HR</a>
+				<a href="/hr">HR</a>
 				<span class="top-header-separator">|</span>
-				<a href="#">RFQ</a>
+				<a href="/quality-control">Quality Control</a>
 				<span class="top-header-separator">|</span>
-				<a href="#">Contact</a>
+				<a href="/contact">Contact</a>
 				<span class="top-header-separator">|</span>
 				<a href="#">Order Entry</a>
 				<span class="top-header-separator">|</span>
-				<a href="#">CMM Login</a>
+				<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
 				<span class="top-header-separator">|</span>
-				<span>+1 714&nbsp;993&nbsp;4200</span>
+				<a href="tel:17149934200">+1 714&nbsp;993&nbsp;4200</a>
 			</div>
 		</div>
 		<div id="header">
@@ -34,7 +34,7 @@
 					&nbsp;
 				</a>
 				<span class="header-separator">&nbsp;</span>
-				<a class="header-item" href="#who-we-are">
+				<a class="header-item" href="/#who-we-are">
 					About
 				</a>
 				<span class="header-separator">&nbsp;</span>
@@ -88,8 +88,8 @@
 		<div id="footer">
 			<div class="outer">
 				<div class="footer-menu-section">
-					<a href="#">About</a>
-					<a href="#">Who We Are</a>
+					<a href="/#who-we-are">About</a>
+					<a href="/#who-we-are">Who We Are</a>
 					<a href="#">History</a>
 					<a href="#">Certifications</a>
 					<a href="#">Capabilities</a>
@@ -115,19 +115,19 @@
 					<a href="#">Our Patents</a>
 				</div>
 				<div class="footer-menu-section">
-					<a href="#">News</a>
-					<a href="#">Careers</a>
-					<a href="#">HR</a>
-					<a href="#">RFQ</a>
-					<a href="#">Contact</a>
+					<a href="/news">News</a>
+					<a href="/careers">Careers</a>
+					<a href="/hr">HR</a>
+					<a href="/quality-control">Quality Control</a>
+					<a href="/contact">Contact</a>
 					<a href="#">Order Entry</a>
-					<a href="#">CMM Login</a>
+					<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
 				</div>
 				<div class="footer-menu-info">
 					<img src="/static/public/img/bottom-logo.png" />
 					<div>900 South Richfield Road</div>
 					<div>Placentia, CA 92870-6788 USA</div>
-					<div>Phone: +1 714 993 4200</div>
+					<div>Phone: <a href="tel:17149934200">+1 714 993 4200</a></div>
 					<div>Fax: +1 714 579 4419</div>
 				</div>
 			</div>

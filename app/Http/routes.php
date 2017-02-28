@@ -26,6 +26,7 @@ Route::group( array( 'prefix' => 'admin' ), function() {
 	Route::resource( 'resource', 'Admin\ResourceController', array( 'only' => array( 'update', 'store', 'destroy', 'show' ) ) );
 	Route::resource( 'page', 'Admin\PageController', array( 'only' => array( 'update', 'store', 'show', 'edit', 'create' ) ) );
 	Route::resource( 'product-category', 'Admin\ProductCategoryController', array( 'only' => array( 'update', 'store', 'show', 'edit', 'create' ) ) );
+	Route::resource( 'platform', 'Admin\PlatformController', array( 'only' => array( 'update', 'store', 'show', 'edit', 'create' ) ) );
 	Route::resource( 'market', 'Admin\MarketController', array( 'only' => array( 'update', 'store', 'show', 'edit', 'create' ) ) );
 	Route::resource( 'product', 'Admin\ProductController', array( 'only' => array( 'update', 'store', 'show', 'edit', 'create' ) ) );
 	Route::resource( 'position', 'Admin\PositionController', array( 'only' => array( 'update', 'store', 'show', 'edit', 'create' ) ) );
