@@ -1,13 +1,13 @@
-<div class="band black news-heading">
-	<div class="max-width">
-		<h2><?= $news->title ?></h2>
+<div class="band-wrapper-outer skip-menu">
+	<div class="outer b-clear">
+		<h2 class="news-headline"><?= $news->title ?></h2>
 	</div>
 </div>
 
-<div class="band news-item">
-	<div class="max-width module">
+<div class="band-wrapper-outer">
+	<div class="outer b-clear news-item-single">
 		<?= $news->body ?>
-		<div class="center">
+		<div class="news-back-link center">
 			<a href="/news">Back To News</a>
 		</div>
 	</div>

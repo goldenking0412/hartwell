@@ -8,6 +8,7 @@ use App\Models\Market;
 use App\Models\Product;
 use App\Models\News;
 use App\Models\Position;
+use App\Models\Contact;
 
 class HomeController extends BaseController
 {
@@ -30,14 +31,44 @@ class HomeController extends BaseController
 		return $this->simplePage('home');
 	}
 
-	public function about()
+	public function support()
 	{
-		return $this->simplePage('about');
+		return redirect('/support/aftermarket-support');
+	}
+
+	public function aftermarketSupport()
+	{
+		return $this->simplePage('aftermarket');
+	}
+
+	public function faaRepairStation()
+	{
+		return $this->simplePage('faarepair');
+	}
+
+	public function qualityControl()
+	{
+		return $this->simplePage('qualitycontrol');
+	}
+
+	public function capabilities()
+	{
+		return $this->simplePage('capabilities', false, ['hideSubNav' => true]);
+	}
+
+	public function hr()
+	{
+		return $this->simplePage('hr', false, ['hideSubNav' => true]);
 	}
 
 	public function contact()
 	{
-		return $this->simplePage('contact');
+		return $this->simplePage('contact', false, [
+			'hideSubNav' => true,
+			'usa'    => Contact::whereGroup('usa')->orderBy('delta')->get(),
+			'sales'  => Contact::whereGroup('sales')->orderBy('delta')->get(),
+			'europe' => Contact::whereGroup('europe')->orderBy('delta')->get(),
+		]);
 	}
 
 	private function career($slug)
@@ -141,29 +172,32 @@ class HomeController extends BaseController
 		return $this->renderView('news-item', [
 			'news' => $news,
 			'productCategories' => ProductCategory::orderBy('delta')->get(),
-			'markets' => Market::orderBy('delta')->get(),
-			'showSubnav' => true,
+			'metaDescription' => $news->meta_description,
 		]);
 	}
 
 	public function news($slug = null)
 	{
-		$news = News::all();
-
-
-		if (! $news) {
-			abort(404);
-		}
-
-		if (! is_null($slug)) {
-			return $this->newsItem($slug);
-		}
-
-		return $this->renderView('news', [
-			'news' => $news,
-			'productCategories' => ProductCategory::orderBy('delta')->get(),
-			'markets' => Market::orderBy('delta')->get(),
-			'showSubnav' => true,
+		return $this->simplePage('news', false, [
+			'news' => News::all(),
+			'hideSubNav' => true,
 		]);
+		// $news = News::all();
+
+
+		// if (! $news) {
+		// 	abort(404);
+		// }
+
+		// if (! is_null($slug)) {
+		// 	return $this->newsItem($slug);
+		// }
+
+		// return $this->renderView('news', [
+		// 	'news' => $news,
+		// 	'productCategories' => ProductCategory::orderBy('delta')->get(),
+		// 	'markets' => Market::orderBy('delta')->get(),
+		// 	'showSubnav' => true,
+		// ]);
 	}
 }

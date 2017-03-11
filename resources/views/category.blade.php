@@ -19,7 +19,7 @@
 	</div>
 	<div id="swipe-fade"></div>
 </div>
-<div id="sidenav">
+<div id="sidenav" class="hide-tablet">
 	<div class="outer">
 		<div id="sn">
 			@foreach($category->bands as $iii => $band)

@@ -165,7 +165,7 @@ $(function() {
 		clearTimeout(debounce);
 		debounce = setTimeout(resetSliders, 300);
 		window.requestAnimationFrame(function() {
-			$('.para-col-left, .para-col-right, .para-col-2-right').each(function() {
+			$('.para-col-left, .para-col-right, .para-col-2-right, .para-col-left-1, .para-col-right-1').each(function() {
 				var $this = $(this);
 				var $body = $this.find('.body');
 

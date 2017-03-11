@@ -116,6 +116,34 @@ class Admin extends InitController {
 		);
 	}
 
+	public function getAftermarketsupport()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'item' => Page::whereType('aftermarket')->with(['bands', 'banners'])->first()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Aftermarket Support',
+			'admin.globals.page'
+		);
+	}
+
+	public function getCapabilities()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'item' => Page::whereType('capabilities')->with(['bands', 'banners'])->first()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Capabilities',
+			'admin.globals.page'
+		);
+	}
+
 	public function getContact()
 	{
 		if ( $this->wantsData() ) {
@@ -125,7 +153,63 @@ class Admin extends InitController {
 		}
 
 		return $this->renderView(
-			'Home',
+			'Contact',
+			'admin.globals.page'
+		);
+	}
+
+	public function getQualitycontrol()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'item' => Page::whereType('qualitycontrol')->with(['bands', 'banners'])->first()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Quality Control',
+			'admin.globals.page'
+		);
+	}
+
+	public function getHr()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'item' => Page::whereType('hr')->with(['bands', 'banners'])->first()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Human Resources',
+			'admin.globals.page'
+		);
+	}
+
+	public function getFaarepair()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'item' => Page::whereType('faarepair')->with(['bands', 'banners'])->first()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'FAA Repair Station',
+			'admin.globals.page'
+		);
+	}
+
+	public function getNewsLanding()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'item' => Page::whereType('news')->with(['bands', 'banners'])->first()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'News Landing Page',
 			'admin.globals.page'
 		);
 	}
@@ -140,20 +224,6 @@ class Admin extends InitController {
 
 		return $this->renderView(
 			'Home',
-			'admin.globals.page'
-		);
-	}
-
-	public function getFaaRepair()
-	{
-		if ( $this->wantsData() ) {
-			return Response::json( array(
-				'item' => Page::whereType('faa-repair')->with(['bands', 'banners'])->first()->toArray(),
-			) );
-		}
-
-		return $this->renderView(
-			'FAA Repair',
 			'admin.globals.page'
 		);
 	}
@@ -200,6 +270,20 @@ class Admin extends InitController {
 		return $this->renderView(
 			'Home',
 			'admin.globals.news'
+		);
+	}
+
+	public function getContactItems()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'items' => \App\Models\Contact::orderBy('delta')->get()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Home',
+			'admin.globals.contacts'
 		);
 	}
 

@@ -1,14 +1,15 @@
-<div class="band black news-heading">
-	<div class="max-width">
-		<h2>News</h2>
+<div class="band-wrapper-outer">
+	<div class="outer">
+		<h2 class="news-headline">Hartwell News</h2>
 	</div>
 </div>
-@foreach ($news as $n)
-	<div class="band news-item">
-		<div class="max-width module">
-			<h3><?= $n->title ?></h3>
-			<?= $n->teaser ?>
-			<a href="/news/<?= $n->slug ?>">Read More</a>
-		</div>
+<div class="band-wrapper-outer">
+	<div class="outer b-clear">
+		@foreach ($news as $n)
+			<div class="band news-item">
+				<h3><a href="/news/<?= $n->slug ?>"><?= $n->title ?></a></h3>
+				<?= $n->teaser ?>
+			</div>
+		@endforeach
 	</div>
-@endforeach
+</div>

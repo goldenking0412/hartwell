@@ -37,6 +37,15 @@ Route::group( array( 'prefix' => 'admin' ), function() {
 Route::controller( 'admin', 'Admin\Admin' );
 
 Route::get('/', 'HomeController@home');
+Route::get('/news', 'HomeController@news');
+Route::get('/news/{slug?}', 'HomeController@newsItem');
+Route::get('/human-resources', 'HomeController@hr');
+Route::get('/capabilities', 'HomeController@capabilities');
+Route::get('/contact', 'HomeController@contact');
+Route::get('/support', 'HomeController@support');
+Route::get('/support/aftermarket-support', 'HomeController@aftermarketSupport');
+Route::get('/support/faa-repair-station', 'HomeController@faaRepairStation');
+Route::get('/support/quality-control', 'HomeController@qualityControl');
 Route::get('/products', 'HomeController@products');
 Route::get('/products/{slug?}', 'HomeController@productCategory');
 

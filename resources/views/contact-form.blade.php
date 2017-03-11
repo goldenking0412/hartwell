@@ -1,18 +1,42 @@
-<div class="band">
+<div class="band-wrapper-outer">
+	<div class="outer b-clear">
 
-	<div class="max-width contact-wrapper">
-		<h2>Contact Us</h2>
+		<form id="contact-form" class="b-clear">
 
-		<form id="contact-form" class="clearfix">
-			<div class="clearfix">
+			<div class="recipient-selector">
+				<?php foreach (['usa' => 'U.S.A', 'sales' => 'Sales', 'europe' => 'Europe',] as $grouping => $groupingLabel): ?>
+					<?php if (${$grouping} && count(${$grouping})): ?>
+						<div class="recipient-group">
+							<h4><?= $groupingLabel ?></h4>
+							<?php foreach (${$grouping} as $r): ?>
+								<label>
+									<input type="radio" name="recipient" value="<?= $r->email ?>" />
+									<div class="input-labels">
+										<?php if (! empty($r->location)): ?>
+											<span><?= $r->location ?></span>
+										<?php endif; ?>
+										<?php if (! empty($r->name)): ?>
+											<span><?= $r->name ?></span>
+										<?php endif; ?>
+										<?php if (! empty($r->phone)): ?>
+											<span><?= $r->phone ?></span>
+										<?php endif; ?>
+										<?php if (! empty($r->other)): ?>
+											<span><?= $r->other ?></span>
+										<?php endif; ?>
+									</div>
+								</label>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</div>
+
+			<div class="b-clear">
 				<div class="form-left">
 					<label>
 						<span>Name</span>
 						<input type="text" name="name" maxlength="200" />
-					</label>
-					<label>
-						<span>Title</span>
-						<input type="text" name="title" maxlength="200" />
 					</label>
 					<label>
 						<span>Company</span>
@@ -26,33 +50,6 @@
 						<span>Phone</span>
 						<input type="text" name="phone" maxlength="200" />
 					</label>
-					<label>
-						<span>Fax</span>
-						<input type="text" name="fax" maxlength="200" />
-					</label>
-				</div>
-
-				<div class="form-right">
-					<label>
-						<span>Address</span>
-						<input type="text" name="address" maxlength="200" />
-					</label>
-					<label>
-						<span>City</span>
-						<input type="text" name="city" maxlength="200" />
-					</label>
-					<label>
-						<span>State</span>
-						<input type="text" name="state" maxlength="200" />
-					</label>
-					<label>
-						<span>Country</span>
-						<input type="text" name="country" maxlength="200" />
-					</label>
-					<label>
-						<span>Zip Code</span>
-						<input type="text" name="zip" maxlength="200" />
-					</label>
 				</div>
 			</div>
 
@@ -63,7 +60,7 @@
 
 			<div class="form-actions">
 				<div class="spinner-wrapper">
-					<a href="#" class="form-submit-link">Send</a>
+					<a class="form-submit-link">Send</a>
 					<img src="/static/public/img/spinner.gif" />
 				</div>
 			</div>

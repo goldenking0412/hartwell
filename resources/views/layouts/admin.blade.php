@@ -31,6 +31,13 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Static Pages <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<?= HTML::menu_link( 'admin/home', 'Home' ) ?>
+									<?= HTML::menu_link( 'admin/capabilities', 'Capabilities' ) ?>
+									<?= HTML::menu_link( 'admin/news-landing', 'News Landing Page' ) ?>
+									<?= HTML::menu_link( 'admin/aftermarketsupport', 'Aftermarket Support' ) ?>
+									<?= HTML::menu_link( 'admin/faarepair', 'FAA Repair Station' ) ?>
+									<?= HTML::menu_link( 'admin/qualitycontrol', 'Quality Control' ) ?>
+									<?= HTML::menu_link( 'admin/hr', 'Human Resources' ) ?>
+									<?= HTML::menu_link( 'admin/contact', 'Contact' ) ?>
 									<!--
 									<?= HTML::menu_link( 'admin/about', 'About' ) ?>
 									<?= HTML::menu_link( 'admin/clients', 'Our Clients' ) ?>
@@ -38,7 +45,6 @@
 									<?= HTML::menu_link( 'admin/certifications', 'Certifications' ) ?>
 									<?= HTML::menu_link( 'admin/platforms', 'Platforms' ) ?>
 									<?= HTML::menu_link( 'admin/faa-repair', 'FAA Repair' ) ?>
-									<?= HTML::menu_link( 'admin/contact', 'Contact' ) ?>
 									<?= HTML::menu_link( 'admin/careers', 'Careers' ) ?>
 									-->
 								</ul>
@@ -46,8 +52,9 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<!--
 									<?= HTML::menu_link( 'admin/news-items', 'News' ) ?>
+									<?= HTML::menu_link( 'admin/contact-items', 'Contacts' ) ?>
+									<!--
 									<?= HTML::menu_link( 'admin/submissions', 'Submissions' ) ?>
 									<?= HTML::menu_link( 'admin/applications', 'Job Applications' ) ?>
 									<?= HTML::menu_link( 'admin/positions', 'Positions' ) ?>

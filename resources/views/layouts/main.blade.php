@@ -15,9 +15,7 @@
 			<div class="outer">
 				<a href="/news">News</a>
 				<span class="top-header-separator">|</span>
-				<a href="/hr">HR</a>
-				<span class="top-header-separator">|</span>
-				<a href="/quality-control">Quality Control</a>
+				<a href="/human-resources">HR</a>
 				<span class="top-header-separator">|</span>
 				<a href="/contact">Contact</a>
 				<span class="top-header-separator">|</span>
@@ -55,6 +53,25 @@
 				</a>
 			</div>
 		</div>
+		<?php if (stristr($currentRoute, 'support/')): ?>
+			<div id="sub-header">
+				<div class="inner-outer">
+					<span class="header-separator">&nbsp;</span>
+					<a href="/support/aftermarket-support"
+						class="<?= stristr($currentRoute, 'aftermarket-support') ? 'active' : '' ?>"
+					>Aftermarket Support</a>
+					<span class="header-separator">&nbsp;</span>
+					<a href="/support/faa-repair-station"
+						class="<?= stristr($currentRoute, 'faa-repair-station') ? 'active' : '' ?>"
+					>FAA Repair Station</a>
+					<span class="header-separator">&nbsp;</span>
+					<a href="/support/quality-control"
+						class="<?= stristr($currentRoute, 'quality-control') ? 'active' : '' ?>"
+					>Quality Control</a>
+					<span class="header-separator">&nbsp;</span>
+				</div>
+			</div>
+		<?php endif; ?>
 		<?php if (stristr($currentRoute, 'products/')): ?>
 			<div id="sub-header">
 				<div class="inner-outer">
@@ -109,18 +126,15 @@
 					<a href="#">Rotor Wing</a>
 				</div>
 				<div class="footer-menu-section">
-					<a href="#">Support</a>
-					<a href="#">After Market</a>
-					<a href="#">FAA Repair</a>
-					<a href="#">Our Patents</a>
+					<a href="/support">Support</a>
+					<a href="/support/aftermarket-support">After Market</a>
+					<a href="/support/faa-repair-station">FAA Repair</a>
+					<a href="/support/quality-control">Quality Control</a>
 				</div>
 				<div class="footer-menu-section">
 					<a href="/news">News</a>
-					<a href="/careers">Careers</a>
-					<a href="/hr">HR</a>
-					<a href="/quality-control">Quality Control</a>
+					<a href="/human-resources">HR</a>
 					<a href="/contact">Contact</a>
-					<a href="#">Order Entry</a>
 					<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
 				</div>
 				<div class="footer-menu-info">
