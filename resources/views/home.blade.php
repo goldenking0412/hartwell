@@ -56,6 +56,7 @@
 		'usa' => @$usa,
 		'sales' => @$sales,
 		'europe' => @$europe,
+		'distributors' => @$distributors,
 	])->render() ?>
 <?php endif; ?>
 

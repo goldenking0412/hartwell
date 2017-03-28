@@ -68,6 +68,7 @@ class HomeController extends BaseController
 			'usa'    => Contact::whereGroup('usa')->orderBy('delta')->get(),
 			'sales'  => Contact::whereGroup('sales')->orderBy('delta')->get(),
 			'europe' => Contact::whereGroup('europe')->orderBy('delta')->get(),
+			'distributors' => Contact::whereGroup('distributors')->orderBy('delta')->get(),
 		]);
 	}
 

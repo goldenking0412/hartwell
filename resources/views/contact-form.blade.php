@@ -4,7 +4,7 @@
 		<form id="contact-form" class="b-clear">
 
 			<div class="recipient-selector">
-				<?php foreach (['usa' => 'U.S.A', 'sales' => 'Sales', 'europe' => 'Europe',] as $grouping => $groupingLabel): ?>
+				<?php foreach (['usa' => 'U.S.A', 'sales' => 'Sales', 'europe' => 'Europe', 'distributors' => 'Distributors'] as $grouping => $groupingLabel): ?>
 					<?php if (${$grouping} && count(${$grouping})): ?>
 						<div class="recipient-group">
 							<h4><?= $groupingLabel ?></h4>

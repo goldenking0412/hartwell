@@ -22,6 +22,7 @@
 								<option value="usa">U.S.A.</option>
 								<option value="sales">Sales</option>
 								<option value="europe">Europe</option>
+								<option value="distributors">Distributors</option>
 							</select>
 						</div>
 					</td>
@@ -68,6 +69,7 @@
 								<option value="usa">U.S.A.</option>
 								<option value="sales">Sales</option>
 								<option value="europe">Europe</option>
+								<option value="distributors">Distributors</option>
 							</select>
 						</div>
 					</td>

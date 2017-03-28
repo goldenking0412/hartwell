@@ -106,6 +106,8 @@
               <option value="FFFFFF">White (#FFFFFF)</option>
               <option value="000000">Black (#000000)</option>
               <option value="e7e8e9">Grey (#E7E8E9)</option>
+              <option value="195a8d">Blue (#195A8D)</option>
+              <option value="022F3B">Dark Blue (#022F3B)</option>
             </select>
           </div>
 
@@ -192,6 +194,8 @@
               <option value="FFFFFF">White (#FFFFFF)</option>
               <option value="000000">Black (#000000)</option>
               <option value="e7e8e9">Grey (#E7E8E9)</option>
+              <option value="195a8d">Blue (#195A8D)</option>
+              <option value="022F3B">Dark Blue (#022F3B)</option>
             </select>
           </div>
 

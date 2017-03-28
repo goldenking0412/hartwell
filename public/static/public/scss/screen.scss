@@ -402,6 +402,12 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		.landing-strip-text-line {
 			margin-bottom: 1em;
 			font-style: italic;
+			@include break(mobile) {
+				font-size: .8em;
+			}
+		}
+		@include break(mobile) {
+			top: 20vh;
 		}
 	}
 }

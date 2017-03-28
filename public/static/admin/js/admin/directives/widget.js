@@ -10,7 +10,7 @@
 				var ck = CKEDITOR.replace(elm[0], {
 					filebrowserUploadUrl: '/upload',
 					extraPlugins: 'colorbutton',
-					colorButton_colors: 'FFFFFF,000000,794a94,fefb76'
+					colorButton_colors: 'FFFFFF,000000,794a94,fefb76,195A8D,022F3B'
 				});
 
 				ck.on('pasteState', function () {
