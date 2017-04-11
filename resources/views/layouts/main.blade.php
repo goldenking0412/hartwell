@@ -107,10 +107,8 @@
 				<div class="footer-menu-section">
 					<a href="/#who-we-are">About</a>
 					<a href="/#who-we-are">Who We Are</a>
-					<a href="#">History</a>
-					<a href="#">Certifications</a>
-					<a href="#">Capabilities</a>
-					<a href="#">State-of-the-Art Mfg.</a>
+					<a href="/#history">History</a>
+					<a href="/capabilities">Capabilities</a>
 				</div>
 				<div class="footer-menu-section">
 					<a href="/products">Products</a>
@@ -136,6 +134,20 @@
 					<a href="/human-resources">HR</a>
 					<a href="/contact">Contact</a>
 					<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
+				</div>
+				<div class="footer-menu-section">
+					<?php foreach (\App\Models\FooterItem::all() as $fi): ?>
+						<?php
+							$fil = $fi->link;
+							// If it's not a URL, and isn't relative, it's a file.
+							if (strpos($fil, 'http') !== 0 && strpos($fil, '/') !== 0) {
+								$fil = '/resources/' . $fil;
+							}
+						?>
+						<a href="<?= $fil ?>">
+							<?= $fi->name ?>
+						</a>
+					<?php endforeach ?>
 				</div>
 				<div class="footer-menu-info">
 					<img src="/static/public/img/bottom-logo.png" />

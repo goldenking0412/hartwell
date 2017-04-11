@@ -6,6 +6,8 @@
 @import "compass/reset";
 @import "compass/css3";
 
+$newBlue: rgb(2, 47, 59);
+
 @mixin break($media) {
 	@if $media == tablet {
 		@media (max-width: 1170px) {
@@ -109,7 +111,9 @@ $altBlue: #385989;
 	}
 	.footer-menu-section {
 		float: left;
-		width: calc(100% / 7);
+		width: calc(100% / 8);
+		@include box-sizing(border-box);
+		padding-right: 10px;
 		a {
 			display: block;
 			color: $black;
@@ -118,6 +122,7 @@ $altBlue: #385989;
 			margin-bottom: 10px;
 			line-height: 20px;
 			font-size: 13px;
+			word-break: break-word;
 			@extend %roboto;
 		}
 		@include break(sm-mobile) {
@@ -139,9 +144,16 @@ $altBlue: #385989;
 		}
 		div {
 			margin-bottom: 15px;
-			color: $blue;
+			color: $newBlue;
 			@extend %roboto;
 			font-size: 13px;
+		}
+		a[href^="tel"] {
+			color: $newBlue;
+			&:hover,
+			&:active {
+				color: $newBlue;
+			}
 		}
 		@include break(sm-mobile) {
 			width: 100%;
@@ -696,6 +708,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		}
 		.input-labels {
 			display: inline-block;
+			width: calc(100% - 50px);
 		}
 	}
 }

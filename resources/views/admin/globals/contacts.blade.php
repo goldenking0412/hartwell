@@ -23,6 +23,7 @@
 								<option value="sales">Sales</option>
 								<option value="europe">Europe</option>
 								<option value="distributors">Distributors</option>
+								<option value="sales-representatives">Sales Representatives</option>
 							</select>
 						</div>
 					</td>
@@ -70,6 +71,7 @@
 								<option value="sales">Sales</option>
 								<option value="europe">Europe</option>
 								<option value="distributors">Distributors</option>
+								<option value="sales-representatives">Sales Representatives</option>
 							</select>
 						</div>
 					</td>

@@ -183,6 +183,21 @@ $(function() {
 				})
 			});
 		});
+
+		if (window.innerWidth > 768) {
+			var tallest = 0;
+			$('.recipient-group').css('height', 'auto');
+			$('.recipient-group').each(function() {
+				var h = $(this).outerHeight();
+				if (h > tallest) {
+					tallest = h;
+				}
+			});
+
+			$('.recipient-group').css('height', tallest);
+		} else {
+			$('.recipient-group').css('height', 'auto');
+		}
 	}).trigger('resize');
 
 	setTimeout(function() {

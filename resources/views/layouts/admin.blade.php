@@ -54,6 +54,7 @@
 								<ul class="dropdown-menu">
 									<?= HTML::menu_link( 'admin/news-items', 'News' ) ?>
 									<?= HTML::menu_link( 'admin/contact-items', 'Contacts' ) ?>
+									<?= HTML::menu_link( 'admin/footer-items', 'Footer Links' ) ?>
 									<!--
 									<?= HTML::menu_link( 'admin/submissions', 'Submissions' ) ?>
 									<?= HTML::menu_link( 'admin/applications', 'Job Applications' ) ?>

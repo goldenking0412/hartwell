@@ -287,6 +287,20 @@ class Admin extends InitController {
 		);
 	}
 
+	public function getFooterItems()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'items' => \App\Models\FooterItem::orderBy('delta')->get()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Home',
+			'admin.globals.footer-items'
+		);
+	}
+
 	private function getMarket($id)
 	{
 		if ( $this->wantsData() ) {

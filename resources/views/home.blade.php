@@ -51,12 +51,23 @@
 	<?= View::make('news', ['news' => @$news])->render() ?>
 <?php endif; ?>
 
+<?php if ($page->type === 'hr'): ?>
+	<div class="outer">
+		<iframe
+			src="https://www.californiadiversity.com/s/e-Hartwell-Corporation-jobs-e97811.html?pbid=67920"
+			frameborder="0"
+			style="width:100%;height:800px;"
+		></iframe>
+	</div>
+<?php endif; ?>
+
 <?php if ($page->type === 'contact'): ?>
 	<?= View::make('contact-form', [
 		'usa' => @$usa,
 		'sales' => @$sales,
 		'europe' => @$europe,
 		'distributors' => @$distributors,
+		'sales_representatives' => @$sales_representatives,
 	])->render() ?>
 <?php endif; ?>
 
