@@ -7,6 +7,7 @@ use App\User as User;
 use App\Models\Page as Page;
 use App\Models\Product as Product;
 use App\Models\ProductCategory as ProductCategory;
+use App\Models\PlatformCategory as PlatformCategory;
 use App\Models\Market as Market;
 use App\Models\News as News;
 use App\Models\Submission as Submission;
@@ -301,6 +302,20 @@ class Admin extends InitController {
 		);
 	}
 
+	public function getSupplierLogos()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'items' => \App\Models\SupplierLogo::orderBy('delta')->get()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Home',
+			'admin.globals.supplier-logos'
+		);
+	}
+
 	private function getMarket($id)
 	{
 		if ( $this->wantsData() ) {
@@ -491,6 +506,37 @@ class Admin extends InitController {
 		return $this->renderView(
 			'Home',
 			'admin.globals.products'
+		);
+	}
+
+	private function getPlatformCategory($id)
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'item' => PlatformCategory::find($id)->load(['bands.bandImages', 'banners'])->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Home',
+			'admin.globals.platform-category'
+		);
+	}
+
+	public function getPlatformCategories($id = null)
+	{
+		if (! is_null($id)) {
+			return $this->getPlatformCategory($id);
+		}
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'items' => PlatformCategory::orderBy('delta')->get()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Home',
+			'admin.globals.platform-categories'
 		);
 	}
 

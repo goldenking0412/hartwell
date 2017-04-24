@@ -12,6 +12,7 @@
 			<div class="landing-strip-text-line">for Latches & Latching Systems</div>
 			<div class="landing-strip-text-line">used in Aerospace, Defense & Commercial Aircraft</div>
 		</div>
+		<div class="floating-logo"></div>
 	</div>
 <?php endif; ?>
 <?php if ($page->type !== 'home'): ?>
@@ -41,6 +42,16 @@
 
 <?php endif; ?>
 
+<?php if ($page->type === 'contact'): ?>
+	<?= View::make('contact-form', [
+		'usa' => @$usa,
+		'sales' => @$sales,
+		'europe' => @$europe,
+		'distributors' => @$distributors,
+		'sales_representatives' => @$sales_representatives,
+	])->render() ?>
+<?php endif; ?>
+
 @foreach($page->bands as $band)
 
 	<?= View::make('band', ['band' => $band])->render() ?>
@@ -51,6 +62,10 @@
 	<?= View::make('news', ['news' => @$news])->render() ?>
 <?php endif; ?>
 
+<?php if ($page->type === 'home'): ?>
+	<?= View::make('supplier-logos')->render() ?>
+<?php endif; ?>
+
 <?php if ($page->type === 'hr'): ?>
 	<div class="outer">
 		<iframe
@@ -59,16 +74,6 @@
 			style="width:100%;height:800px;"
 		></iframe>
 	</div>
-<?php endif; ?>
-
-<?php if ($page->type === 'contact'): ?>
-	<?= View::make('contact-form', [
-		'usa' => @$usa,
-		'sales' => @$sales,
-		'europe' => @$europe,
-		'distributors' => @$distributors,
-		'sales_representatives' => @$sales_representatives,
-	])->render() ?>
 <?php endif; ?>
 
 <?php if ($page->type === 'careers'): ?>

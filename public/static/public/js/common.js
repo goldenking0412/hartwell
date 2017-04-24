@@ -32,7 +32,7 @@ function showPosition(){
 
 function percentageFromTop() {
 	var max = window.innerHeight;
-	var now = document.body.scrollTop;
+	var now = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
 	if (now === 0) return 0;
 	if (now >= max) return 100;
@@ -41,6 +41,21 @@ function percentageFromTop() {
 }
 
 $(function() {
+
+	window.__mobileMenuActive = false;
+
+	$('#mobile-menu').on('click', function(e) {
+		e.preventDefault();
+
+		if (window.__mobileMenuActive) {
+			window.__mobileMenuActive = false;
+			$('html').removeClass('menu-out');
+		} else {
+			window.__mobileMenuActive = true;
+			$('html').addClass('menu-out');
+		}
+
+	});//.trigger('click');
 
 	window.mySwipe = Swipe(document.getElementById('slider'), {
 		auto: 3000,
@@ -62,6 +77,7 @@ $(function() {
 	var $c4 = $('.cloud-4');
 	var $header = $('#header');
 	var $whiteDrift = $('.white-drift');
+	var $floatingLogo = $('.floating-logo');
 
 	function handleHeader() {
 		if ($(window).scrollTop() <= 35) {
@@ -91,7 +107,9 @@ $(function() {
 			}
 
 			$this.css({
-				'transform': 'translate(0, ' + calculated + '%'
+				'-webkit-transform': 'translate(0, ' + calculated + '%)',
+				'-moz-transform': 'translate(0, ' + calculated + '%)',
+				'transform': 'translate(0, ' + calculated + '%)'
 			});
 		});
 	}
@@ -112,29 +130,38 @@ $(function() {
 			'background-position-y': pos + '%'
 		});
 
-
 		var top = p * 2;
 		var scale = 1 + ((p * 4) / 100);
 
 		var transformString = 'translate(0, -' + top + 'vh) scale(' + scale + ')';
 
 		$jet.css({
+			'-moz-transform': transformString,
+			'-webkit-transform': transformString,
 			'transform': transformString
 		});
 
 		$c1.css({
+			'-moz-transform': 'translate(0, ' + (p * 3) + 'vh)',
+			'-webkit-transform': 'translate(0, ' + (p * 3) + 'vh)',
 			'transform': 'translate(0, ' + (p * 3) + 'vh)'
 		});
 
 		$c2.css({
+			'-moz-transform': 'translate(0, ' + (p * 3.2) + 'vh)',
+			'-webkit-transform': 'translate(0, ' + (p * 3.2) + 'vh)',
 			'transform': 'translate(0, ' + (p * 3.2) + 'vh)'
 		});
 
 		$c3.css({
+			'-moz-transform': 'translate(0, ' + (p * 5) + 'vh)',
+			'-webkit-transform': 'translate(0, ' + (p * 5) + 'vh)',
 			'transform': 'translate(0, ' + (p * 5) + 'vh)'
 		});
 
 		$c4.css({
+			'-moz-transform': 'translate(0, ' + (p * 5.2) + 'vh)',
+			'-webkit-transform': 'translate(0, ' + (p * 5.2) + 'vh)',
 			'transform': 'translate(0, ' + (p * 5.2) + 'vh)'
 		});
 
@@ -145,7 +172,13 @@ $(function() {
 		}
 
 		$whiteDrift.css({
+			'-moz-transform': 'translate(0, -' + driftFactor + 'vh)',
+			'-webkit-transform': 'translate(0, -' + driftFactor + 'vh)',
 			'transform': 'translate(0, -' + driftFactor + 'vh)'
+		});
+
+		$floatingLogo.css({
+			'top': (pos - 50) + 'vh'
 		});
 	}
 

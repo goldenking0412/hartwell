@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="/static/public/stylesheets/screen.css">
 	</head>
 	<body>
+		<div class="main-container">
 		<div id="top-header">
 			<div class="outer">
 				<a href="/news">News</a>
@@ -51,6 +52,7 @@
 				<a class="header-item" href="/support">
 					Support
 				</a>
+				<a class="mobile-only" id="mobile-menu" href="#">&equiv;</a>
 			</div>
 		</div>
 		<?php if (stristr($currentRoute, 'support/')): ?>
@@ -89,6 +91,7 @@
 			<?= $content ?>
 		<?php endif; ?>
 
+		<div class="product-types-outer-wrapper">
 		<div class="product-types outer">
 			<?php foreach ($globalData['productCategories'] as $productType): ?>
 
@@ -100,6 +103,7 @@
 			</a>
 
 			<?php endforeach; ?>
+		</div>
 		</div>
 
 		<div id="footer">
@@ -159,6 +163,8 @@
 			</div>
 		</div>
 		<div class="by-beehive">site by Beehive</div>
+		<?= View::make('mobile-menu')->render() ?>
+		</div>
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="/static/public/js/lib.js"></script>

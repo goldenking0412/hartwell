@@ -55,6 +55,7 @@
 									<?= HTML::menu_link( 'admin/news-items', 'News' ) ?>
 									<?= HTML::menu_link( 'admin/contact-items', 'Contacts' ) ?>
 									<?= HTML::menu_link( 'admin/footer-items', 'Footer Links' ) ?>
+									<?= HTML::menu_link( 'admin/supplier-logos', 'Supplier Logos' ) ?>
 									<!--
 									<?= HTML::menu_link( 'admin/submissions', 'Submissions' ) ?>
 									<?= HTML::menu_link( 'admin/applications', 'Job Applications' ) ?>
@@ -64,7 +65,7 @@
 								</ul>
 							</li>
 							<?= HTML::menu_link( 'admin/product-categories', 'Product Categories' ) ?>
-							<?= HTML::menu_link( 'admin/platforms', 'Platforms' ) ?>
+							<?= HTML::menu_link( 'admin/platform-categories', 'Platform Categories' ) ?>
 						</ul>
 						<p class="navbar-text pull-right"><span class="name">Signed in as <?= Auth::user()->name ?> | </span><a href="/admin/logout" class="navbar-link">Logout</a></p>
 					</div><!--/.nav-collapse -->
