@@ -1372,20 +1372,106 @@ input[type="submit"]:hover,
   }
 }
 
-/* line 1137, ../scss/screen.scss */
+/* line 1138, ../scss/screen.scss */
+#wireframe {
+  overflow: hidden;
+  position: relative;
+  margin-top: 157px;
+  height: 741px;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+/* line 1148, ../scss/screen.scss */
+#wireframe.no-sub {
+  margin-top: 115px;
+}
+/* line 1151, ../scss/screen.scss */
+#wireframe .wireframe-fg {
+  height: 741px;
+  width: 1140px;
+  background-position: center center;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: relative;
+}
+/* line 1161, ../scss/screen.scss */
+#wireframe .wireframe-circle {
+  position: absolute;
+  background-image: url("../img/circle-inactive.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 179px;
+  height: 184px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  display: table;
+}
+/* line 1173, ../scss/screen.scss */
+#wireframe .wireframe-circle span, #wireframe .wireframe-circle a, #wireframe .wireframe-circle a:hover, #wireframe .wireframe-circle a:active, #wireframe .wireframe-circle a:visited {
+  display: table-cell;
+  vertical-align: middle;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 17px;
+  user-select: none;
+}
+/* line 1181, ../scss/screen.scss */
+#wireframe .wireframe-circle:hover {
+  background-image: url("../img/circle-active.png");
+}
+@media (max-width: 1170px) {
+  /* line 1138, ../scss/screen.scss */
+  #wireframe {
+    margin-top: 146px;
+    height: 518.7px;
+  }
+  /* line 1187, ../scss/screen.scss */
+  #wireframe.no-sub {
+    margin-top: 105px;
+  }
+  /* line 1191, ../scss/screen.scss */
+  #wireframe .wireframe-fg {
+    height: 518.7px;
+    width: 798px;
+  }
+  /* line 1195, ../scss/screen.scss */
+  #wireframe .wireframe-fg .wireframe-circle {
+    width: 125.3px;
+    height: 128.8px;
+  }
+  /* line 1198, ../scss/screen.scss */
+  #wireframe .wireframe-fg .wireframe-circle span, #wireframe .wireframe-fg .wireframe-circle a, #wireframe .wireframe-fg .wireframe-circle a:hover, #wireframe .wireframe-fg .wireframe-circle a:active, #wireframe .wireframe-fg .wireframe-circle a:visited {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 1138, ../scss/screen.scss */
+  #wireframe {
+    margin-top: 108px;
+  }
+  /* line 1206, ../scss/screen.scss */
+  #wireframe.no-sub {
+    margin-top: 70px;
+  }
+}
+
+/* line 1212, ../scss/screen.scss */
 .swipe-wrap {
   overflow: hidden;
   position: relative;
 }
 
-/* line 1141, ../scss/screen.scss */
+/* line 1216, ../scss/screen.scss */
 .swipe-wrap > div {
   float: left;
   width: 100%;
   position: relative;
 }
 
-/* line 1147, ../scss/screen.scss */
+/* line 1222, ../scss/screen.scss */
 .page-headline {
   padding-top: 6vh;
   color: #FFF;
@@ -1395,7 +1481,7 @@ input[type="submit"]:hover,
   font-weight: bold;
 }
 
-/* line 1156, ../scss/screen.scss */
+/* line 1231, ../scss/screen.scss */
 #swipe-fade {
   height: 10vh;
   position: absolute;
@@ -1406,7 +1492,7 @@ input[type="submit"]:hover,
   background-image: linear-gradient(0deg, #ffffff 1%, rgba(255, 255, 255, 0) 95%);
 }
 
-/* line 1170, ../scss/screen.scss */
+/* line 1245, ../scss/screen.scss */
 .hero {
   height: 80vh;
   background: url("../img/heros/home.png") no-repeat;
@@ -1414,7 +1500,7 @@ input[type="submit"]:hover,
   background-position: center center;
 }
 @media (max-width: 1170px) {
-  /* line 1170, ../scss/screen.scss */
+  /* line 1245, ../scss/screen.scss */
   .hero {
     height: 50vh;
     background-size: 100% auto;
@@ -1422,13 +1508,13 @@ input[type="submit"]:hover,
   }
 }
 @media (max-width: 767px) {
-  /* line 1170, ../scss/screen.scss */
+  /* line 1245, ../scss/screen.scss */
   .hero {
     height: 40vh;
   }
 }
 @media (max-width: 668px) {
-  /* line 1170, ../scss/screen.scss */
+  /* line 1245, ../scss/screen.scss */
   .hero {
     height: 30vh;
     height: 300px;
@@ -1436,7 +1522,7 @@ input[type="submit"]:hover,
   }
 }
 
-/* line 1190, ../scss/screen.scss */
+/* line 1265, ../scss/screen.scss */
 .hero-box {
   max-width: 600px;
   margin: 0 auto;
@@ -1448,17 +1534,17 @@ input[type="submit"]:hover,
   text-align: center;
 }
 
-/* line 1202, ../scss/screen.scss */
+/* line 1277, ../scss/screen.scss */
 #sidenav .outer {
   position: relative;
 }
-/* line 1205, ../scss/screen.scss */
+/* line 1280, ../scss/screen.scss */
 #sidenav #sn {
   position: absolute;
   top: 100px;
   width: 230px;
 }
-/* line 1209, ../scss/screen.scss */
+/* line 1284, ../scss/screen.scss */
 #sidenav #sn a {
   display: block;
   text-decoration: none;
@@ -1467,7 +1553,7 @@ input[type="submit"]:hover,
   line-height: 50px;
 }
 
-/* line 1220, ../scss/screen.scss */
+/* line 1295, ../scss/screen.scss */
 .supplier-logos-fade-in,
 .supplier-logos-fade-out {
   height: 80px;
@@ -1475,19 +1561,19 @@ input[type="submit"]:hover,
   background: linear-gradient(0deg, #ffffff, #e7e8e9);
 }
 @media (max-width: 767px) {
-  /* line 1220, ../scss/screen.scss */
+  /* line 1295, ../scss/screen.scss */
   .supplier-logos-fade-in,
   .supplier-logos-fade-out {
     height: 40px;
   }
 }
 
-/* line 1229, ../scss/screen.scss */
+/* line 1304, ../scss/screen.scss */
 .supplier-logos-fade-out {
   background: linear-gradient(0deg, #e7e8e9, #ffffff);
 }
 
-/* line 1234, ../scss/screen.scss */
+/* line 1309, ../scss/screen.scss */
 .supplier-logos h2 {
   font-size: 26px;
   font-weight: bold;
@@ -1501,11 +1587,11 @@ input[type="submit"]:hover,
   max-width: 400px;
 }
 
-/* line 1248, ../scss/screen.scss */
+/* line 1323, ../scss/screen.scss */
 .suppliers {
   overflow: hidden;
 }
-/* line 1250, ../scss/screen.scss */
+/* line 1325, ../scss/screen.scss */
 .suppliers .supplier {
   float: left;
   width: 20%;
@@ -1514,7 +1600,7 @@ input[type="submit"]:hover,
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 1255, ../scss/screen.scss */
+/* line 1330, ../scss/screen.scss */
 .suppliers .supplier .supplier-logo-wrap {
   display: table-cell;
   width: 100%;
@@ -1522,32 +1608,32 @@ input[type="submit"]:hover,
   vertical-align: middle;
   text-align: center;
 }
-/* line 1261, ../scss/screen.scss */
+/* line 1336, ../scss/screen.scss */
 .suppliers .supplier .supplier-logo-wrap img {
   width: 100%;
   height: auto;
 }
-/* line 1266, ../scss/screen.scss */
+/* line 1341, ../scss/screen.scss */
 .suppliers .supplier .supplier-name-wrap {
   display: none;
 }
 @media (max-width: 767px) {
-  /* line 1250, ../scss/screen.scss */
+  /* line 1325, ../scss/screen.scss */
   .suppliers .supplier {
     width: 50%;
     display: block;
   }
-  /* line 1272, ../scss/screen.scss */
+  /* line 1347, ../scss/screen.scss */
   .suppliers .supplier .supplier-name-wrap {
     display: block;
   }
-  /* line 1275, ../scss/screen.scss */
+  /* line 1350, ../scss/screen.scss */
   .suppliers .supplier .supplier-logo-wrap {
     display: none;
   }
 }
 
-/* line 1282, ../scss/screen.scss */
+/* line 1357, ../scss/screen.scss */
 #contact-form {
   margin-bottom: 40px;
 }

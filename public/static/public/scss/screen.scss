@@ -1134,6 +1134,81 @@ input[type="submit"],
 		}
 	}
 }
+
+#wireframe {
+	$wireframeHeight: 741px;
+	$wireframeWidth: 1140px;
+	overflow: hidden;
+	position: relative;
+	margin-top:157px;
+	height: $wireframeHeight;
+	width: 100%;
+	background-position: center center;
+	background-size: cover;
+	&.no-sub {
+		margin-top: 115px;
+	}
+	.wireframe-fg {
+		height: $wireframeHeight;
+		width: $wireframeWidth;
+		background-position: center center;
+		background-size: 100% 100%;
+		margin: 0 auto;
+		position: relative;
+	}
+	$wireframeCircleWidth: 179px;
+	$wireframeCircleHeight: 184px;
+	.wireframe-circle {
+		position: absolute;
+		background-image: url('../img/circle-inactive.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		width: $wireframeCircleWidth;
+		height: $wireframeCircleHeight;
+		text-align: center;
+		box-sizing: border-box;
+		padding: 10px;
+		display: table;
+		span, a, a:hover, a:active, a:visited {
+			display: table-cell;
+			vertical-align: middle;
+			color: #FFF;
+			font-weight: 600;
+			font-size: 17px;
+			user-select: none;
+		}
+		&:hover {
+			background-image: url('../img/circle-active.png');
+		}
+	}
+	@include break(tablet) {
+		margin-top: 146px;
+		&.no-sub {
+			margin-top: 105px;
+		}
+		height: $wireframeHeight*.7;
+		.wireframe-fg {
+			//@include transform(scale(0.5));
+			height: $wireframeHeight*.7;
+			width: $wireframeWidth*.7;
+			.wireframe-circle {
+				width: $wireframeCircleWidth*.7;
+				height: $wireframeCircleHeight*.7;
+				span, a, a:hover, a:active, a:visited {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	@include break(mobile) {
+		margin-top: 108px;
+		&.no-sub {
+			margin-top: 70px;
+		}
+	}
+}
+
 .swipe-wrap {
 	overflow: hidden;
 	position: relative;

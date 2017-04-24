@@ -49,6 +49,8 @@ Route::get('/support/faa-repair-station', 'HomeController@faaRepairStation');
 Route::get('/support/quality-control', 'HomeController@qualityControl');
 Route::get('/products', 'HomeController@products');
 Route::get('/products/{slug?}', 'HomeController@productCategory');
+Route::get('/platforms', 'HomeController@platforms');
+Route::get('/platforms/{slug?}', 'HomeController@platformCategory');
 
 // Products, News, Careers, Contact
 

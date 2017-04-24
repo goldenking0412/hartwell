@@ -513,7 +513,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => PlatformCategory::find($id)->load(['bands.bandImages', 'banners'])->toArray(),
+				'item' => PlatformCategory::find($id)->load(['bands.bandImages', 'banners', 'hotspots'])->toArray(),
 			) );
 		}
 

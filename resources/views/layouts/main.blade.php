@@ -87,6 +87,19 @@
 				</div>
 			</div>
 		<?php endif; ?>
+		<?php if (stristr($currentRoute, 'platforms/')): ?>
+			<div id="sub-header">
+				<div class="inner-outer">
+					<span class="header-separator">&nbsp;</span>
+					<?php foreach ($globalData['platformCategories'] as $productType): ?>
+						<a href="/platforms/<?= $productType->slug ?>" class="<?= $globalData['category']->id == $productType->id ? 'active' : '' ?>">
+							<?= $productType->title ?>
+						</a>
+						<span class="header-separator">&nbsp;</span>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		<?php if (isset($content)): ?>
 			<?= $content ?>
 		<?php endif; ?>

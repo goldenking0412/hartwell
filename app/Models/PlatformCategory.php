@@ -16,6 +16,7 @@ class PlatformCategory extends Model {
         'delta',
         'title',
         'image',
+        'image_2',
         'banner',
         'headline',
         'slug',
@@ -26,6 +27,11 @@ class PlatformCategory extends Model {
     {
         return $this->belongsToMany('App\Models\Band')
             ->orderBy('delta');
+    }
+
+    public function hotspots()
+    {
+        return $this->belongsToMany('App\Models\HotSpot');
     }
 
     public function banners()

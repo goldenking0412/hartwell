@@ -34,6 +34,7 @@
         '/static/admin/js/admin/directives/toggleRow.js',
         '/static/admin/js/admin/directives/subNav.js',
         '/static/admin/js/admin/directives/widget.js',
+        '/static/admin/js/admin/directives/wireframe.js',
         '/static/admin/js/admin/controllers/RouteController.js',
         '/static/admin/js/admin/controllers/ResourceController.js',
         '/static/admin/js/admin/directives/sortable.js',

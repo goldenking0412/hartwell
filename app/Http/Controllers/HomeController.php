@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use App\Models\ProductCategory;
+use App\Models\PlatformCategory;
 use App\Models\Market;
 use App\Models\Product;
 use App\Models\News;
@@ -20,6 +21,7 @@ class HomeController extends BaseController
 		$datas = array_merge($extra, [
 			'page' => $page,
 			'productCategories' => ProductCategory::all(),
+			'platformCategories' => PlatformCategory::all(),
 			'metaDescription' => $page->meta_description,
 		]);
 
@@ -138,7 +140,24 @@ class HomeController extends BaseController
 
 	public function platforms()
 	{
-		return $this->simplePage('platforms');
+		$category = PlatformCategory::first();
+		return redirect('/platforms/' . $category->slug);
+	}
+
+	public function platformCategory($slug = null)
+	{
+		$category = PlatformCategory::whereSlug($slug)->with(['bands.bandImages', 'banners', 'hotspots'])->first();
+
+		if (! $category) {
+			abort(404);
+		}
+
+		return $this->renderView('platform-category', [
+			'category' => $category,
+			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'platformCategories' => PlatformCategory::orderBy('delta')->get(),
+			'metaDescription' => $category->meta_description,
+		]);
 	}
 
 	public function products()
