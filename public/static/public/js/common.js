@@ -40,6 +40,36 @@ function percentageFromTop() {
 	return (now / max) * 100;
 }
 
+window.initMap = function() {
+	$('.map').each(function() {
+		var $this = $(this);
+
+		$this.parent().height($('.contact-form-wrapper-outer').height());
+
+		var mapOptions = {
+			zoom: 16,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+
+		var map = new google.maps.Map(this, mapOptions);
+		var geocoder = new google.maps.Geocoder();
+
+		geocoder.geocode( {'address': $this.data('config')}, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				map.setCenter(results[0].geometry.location);
+				var marker = new google.maps.Marker({
+					map: map,
+					position: results[0].geometry.location
+				});
+				marker.setMap(map);
+			} else {
+				return;
+			}
+		});
+
+	});
+};
+
 $(function() {
 
 	window.__mobileMenuActive = false;
@@ -55,7 +85,23 @@ $(function() {
 			$('html').addClass('menu-out');
 		}
 
-	});//.trigger('click');
+	});
+
+	if (('onhashchange' in window)) {
+		$(window).bind('hashchange', function() {
+			var hash = window.location.hash.replace(/^#/,'');
+			if (hash && hash.indexOf('index') === 0) {
+				var hashParts = hash.split('-');
+				if (hashParts.length === 2) {
+					var $now  = $('.band-wrapper-outer').eq(parseInt(hashParts[1]));
+					setTimeout(function() {
+						$(document).scrollTop($now.offset().top - 180);
+					}, 300);
+				}
+			}
+		}).trigger('hashchange');
+
+	}
 
 	window.mySwipe = Swipe(document.getElementById('slider'), {
 		auto: 3000,
@@ -218,16 +264,42 @@ $(function() {
 		});
 
 		if (window.innerWidth > 768) {
-			var tallest = 0;
 			$('.recipient-group').css('height', 'auto');
+			var tallest   = 0;
+			var rowLength = window.innerWidth > 1170 ? 3 : 2;
+			var row       = 1;
+			var rows      = [];
+
 			$('.recipient-group').each(function() {
-				var h = $(this).outerHeight();
-				if (h > tallest) {
-					tallest = h;
+				var $rg = $(this);
+
+				if (rows.length < row) {
+					rows.push([]);
+				}
+
+				if ($rg.index() < rowLength) {
+					var rowIndex = rows.length - 1;
+					rows[rowIndex].push($rg);
+
+					if ((rowLength - $rg.index()) === 1) {
+						row++;
+						rowLength = rowLength*row;
+					}
 				}
 			});
 
-			$('.recipient-group').css('height', tallest);
+			$.each(rows, function(i, v) {
+				var rowHeight = 0;
+				$.each(v, function(ii, $v) {
+					var hh = $v.outerHeight();
+					if (hh > rowHeight) {
+						rowHeight = hh;
+					}
+				});
+				$.each(v, function(ii, $v) {
+					$v.css('height', rowHeight);
+				});
+			});
 		} else {
 			$('.recipient-group').css('height', 'auto');
 		}
@@ -246,7 +318,6 @@ $(function() {
 	});
 
 	$('#sn').find('.band-link').click(function(e) {
-		e.preventDefault();
 		var $this = $(this);
 		var $now  = $('.band-wrapper-outer').eq(parseInt($this.attr('index')));
 

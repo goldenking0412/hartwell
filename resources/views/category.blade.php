@@ -24,7 +24,7 @@
 		<div id="sn">
 			@foreach($category->bands as $iii => $band)
 				<?php if (! empty($band->section)): ?>
-					<a href="#" class="band-link" index="<?= (int) $iii ?>">
+					<a href="#index-<?= (int) $iii ?>" class="band-link" index="<?= (int) $iii ?>">
 						<?= $band->section ?>
 					</a>
 				<?php endif; ?>

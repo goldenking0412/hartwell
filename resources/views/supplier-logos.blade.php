@@ -3,7 +3,7 @@
 
 	<div class="supplier-logos outer">
 
-		<h2>A Preferred Supplier</h2>
+		<h2>A Preferred Supplier to:</h2>
 
 		<div class="suppliers">
 			<?php foreach (\App\Models\SupplierLogo::orderBy('delta')->get() as $l): ?>

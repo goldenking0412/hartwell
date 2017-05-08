@@ -8,9 +8,9 @@
 		<div class="white-drift"></div>
 		<div class="landing-strip-text">
 			<div class="landing-strip-text-line">Hartwell Corporation</div>
-			<div class="landing-strip-text-line">is the Market Leader</div>
-			<div class="landing-strip-text-line">for Latches & Latching Systems</div>
-			<div class="landing-strip-text-line">used in Aerospace, Defense & Commercial Aircraft</div>
+			<div class="landing-strip-text-line">is the Preferred Choice</div>
+			<div class="landing-strip-text-line">for Latches and Latching Systems</div>
+			<div class="landing-strip-text-line">used in Commercial and Defense Aircraft Applications</div>
 		</div>
 		<div class="floating-logo"></div>
 	</div>

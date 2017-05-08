@@ -32,39 +32,49 @@
 				<?php endforeach; ?>
 			</div>
 
-			<div class="b-clear">
-				<div class="form-left">
-					<label>
-						<span>Name</span>
-						<input type="text" name="name" maxlength="200" />
+			<div class="contact-form-wrapper-outer">
+				<div class="contact-form-wrapper">
+					<div class="b-clear">
+						<div class="form-left">
+							<label>
+								<span>Name</span>
+								<input type="text" name="name" maxlength="200" />
+							</label>
+							<label>
+								<span>Company</span>
+								<input type="text" name="company" maxlength="200" />
+							</label>
+							<label>
+								<span>Email</span>
+								<input type="text" name="email" maxlength="200" />
+							</label>
+							<label>
+								<span>Phone</span>
+								<input type="text" name="phone" maxlength="200" />
+							</label>
+						</div>
+					</div>
+
+					<label class="comment">
+						<span>Comment</span>
+						<textarea name="comments" rows="6" maxlength="4048"></textarea>
 					</label>
-					<label>
-						<span>Company</span>
-						<input type="text" name="company" maxlength="200" />
-					</label>
-					<label>
-						<span>Email</span>
-						<input type="text" name="email" maxlength="200" />
-					</label>
-					<label>
-						<span>Phone</span>
-						<input type="text" name="phone" maxlength="200" />
-					</label>
+
+					<div class="form-actions">
+						<div class="spinner-wrapper">
+							<a class="form-submit-link">Send</a>
+							<img src="/static/public/img/spinner.gif" />
+						</div>
+					</div>
+				</div>
+				<div class="contact-form-map">
+					<div class="map"
+						data-config="900 South Richfield Road Placentia, CA 92870-6788 USA"
+						style="height: 100%; width: calc(100% - 20px)"
+					>
+					</div>
 				</div>
 			</div>
-
-			<label class="comment">
-				<span>Comment</span>
-				<textarea name="comments" rows="6" maxlength="4048"></textarea>
-			</label>
-
-			<div class="form-actions">
-				<div class="spinner-wrapper">
-					<a class="form-submit-link">Send</a>
-					<img src="/static/public/img/spinner.gif" />
-				</div>
-			</div>
-
 		</form>
 	</div>
 

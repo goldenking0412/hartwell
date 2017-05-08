@@ -319,6 +319,19 @@ $altBlue: #385989;
 	}
 }
 
+#mobile-header-number {
+	padding-right: 15px;
+	text-align: right;
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	a {
+		text-decoration: none;
+		@extend %roboto;
+		font-size: 14px;
+	}
+}
+
 #logo {
 	$logoWidth: 308.25px;
 	$logoHeight: 48.75px;
@@ -346,6 +359,7 @@ $altBlue: #385989;
 	position: absolute;
 	right: 10px;
 	top: 50%;
+	top: 37%;
 	margin-top: -30px;
 	color: rgb(0, 48, 59);
 }
@@ -545,7 +559,8 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 	width: $floatingLogoWidth * .65;
 	height: $floatingLogoHeight * .65;
 	display: block;
-	background-image: url('../img/hartwell-banner-logo.png');
+	//background-image: url('../img/hartwell-banner-logo.png');
+	background-image: url('../img/hartwell_logo_white.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
@@ -583,6 +598,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		}
 		p {
 			font-size: 16px;
+			font-size: 18px;
 			font-weight: bold;
 			color: $black;
 			color: $blue;
@@ -623,7 +639,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		background-size: contain;
 		background-position: left center;
 		position: relative;
-		right: -10%;
+		//right: -10%;
 		z-index: 0;
 		transform: translate(0, 0);
 		transition: transform 10ms linear;
@@ -644,6 +660,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		}
 		p {
 			font-size: 16px;
+			font-size: 18px;
 			font-weight: bold;
 			color: $black;
 			color: $blue;
@@ -701,7 +718,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 	.para {
 		background-position: right center;
 		position: relative;
-		left: -10%;
+		//left: -10%;
 		z-index: 0;
 	}
 	@include break(mobile) {
@@ -736,6 +753,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		}
 		p {
 			font-size: 16px;
+			font-size: 18px;
 			font-weight: bold;
 			color: $black;
 			color: $blue;
@@ -1002,6 +1020,7 @@ input[type="submit"],
 		}
 		p {
 			font-size: 16px;
+			font-size: 18px;
 			font-weight: bold;
 			color: $black;
 			color: $blue;
@@ -1085,6 +1104,7 @@ input[type="submit"],
 		margin-bottom: 10px;
 	}
 	font-size: 16px;
+	font-size: 18px;
 	line-height: 22px;
 }
 
@@ -1356,4 +1376,27 @@ input[type="submit"],
 
 #contact-form {
 	margin-bottom: 40px;
+}
+
+.contact-form-wrapper-outer {
+	overflow: hidden;
+	.contact-form-wrapper {
+		width: 50%;
+		float: left;
+	}
+	.contact-form-map {
+		width: 50%;
+		float: left;
+		@include box-sizing(border-box);
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	@include break(mobile) {
+		.contact-form-wrapper,
+		.contact-form-map {
+			width: 100%;
+			float: none;
+			margin-bottom: 20px;
+		}
+	}
 }

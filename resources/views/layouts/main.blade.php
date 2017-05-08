@@ -34,7 +34,7 @@
 				</a>
 				<span class="header-separator">&nbsp;</span>
 				<a class="header-item" href="/#who-we-are">
-					About
+					About Us
 				</a>
 				<span class="header-separator">&nbsp;</span>
 				<a class="header-item" href="/capabilities">
@@ -53,6 +53,9 @@
 					Support
 				</a>
 				<a class="mobile-only" id="mobile-menu" href="#">&equiv;</a>
+			</div>
+			<div id="mobile-header-number" class="mobile-only">
+				<a href="tel:17149934200">+1 714 993 4200</a>
 			</div>
 		</div>
 		<?php if (stristr($currentRoute, 'support/')): ?>
@@ -122,10 +125,11 @@
 		<div id="footer">
 			<div class="outer">
 				<div class="footer-menu-section">
-					<a href="/#who-we-are">About</a>
+					<a href="/#who-we-are">About Us</a>
 					<a href="/#who-we-are">Who We Are</a>
 					<a href="/#history">History</a>
 					<a href="/capabilities">Capabilities</a>
+					<a href="/resources/Hartwell_certifications.pdf">Our Certifications</a>
 				</div>
 				<div class="footer-menu-section">
 					<a href="/products">Products</a>
@@ -151,18 +155,20 @@
 					<a href="/human-resources">HR</a>
 					<a href="/contact">Contact</a>
 					<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
+					<a href="/resources/Website%20IP%20Listing%2001-30-2017.pdf">Our Patents</a>
 				</div>
 				<div class="footer-menu-section">
-					<?php foreach (\App\Models\FooterItem::all() as $fi): ?>
+					<?php foreach (\App\Models\FooterItem::orderBy('delta')->get()->toArray() as $fi): ?>
 						<?php
-							$fil = $fi->link;
+							if ($fi['name'] === '&nbsp;') continue;
+							$fil = $fi['link'];
 							// If it's not a URL, and isn't relative, it's a file.
 							if (strpos($fil, 'http') !== 0 && strpos($fil, '/') !== 0) {
 								$fil = '/resources/' . $fil;
 							}
 						?>
 						<a href="<?= $fil ?>">
-							<?= $fi->name ?>
+							<?= $fi['name'] ?>
 						</a>
 					<?php endforeach ?>
 				</div>
@@ -182,4 +188,5 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="/static/public/js/lib.js"></script>
 	<script src="/static/public/js/common.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-l8wyp7WNl5ViWFzPfUmRLKkqCpAR9Og&callback=initMap"></script>
 </html>
