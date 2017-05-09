@@ -1082,15 +1082,9 @@ html .main-container {
 }
 /* line 927, ../scss/screen.scss */
 .recipient-selector .recipient-group {
-  width: 33.333%;
+  width: 50%;
   float: left;
   font-family: 'Roboto', sans-serif;
-}
-@media (max-width: 1170px) {
-  /* line 927, ../scss/screen.scss */
-  .recipient-selector .recipient-group {
-    width: 50%;
-  }
 }
 @media (max-width: 767px) {
   /* line 927, ../scss/screen.scss */

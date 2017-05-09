@@ -279,7 +279,7 @@ $(function() {
 		if (window.innerWidth > 768) {
 			$('.recipient-group').css('height', 'auto');
 			var tallest   = 0;
-			var rowLength = window.innerWidth > 1170 ? 3 : 2;
+			var rowLength = 2;//window.innerWidth > 1170 ? 3 : 2;
 			var row       = 1;
 			var rows      = [];
 
