@@ -14,6 +14,7 @@
 		<div class="main-container">
 		<div id="top-header">
 			<div class="outer">
+				<?= View::make('global-times')->render() ?>
 				<a href="/news">News</a>
 				<span class="top-header-separator">|</span>
 				<a href="/human-resources">HR</a>
@@ -25,6 +26,12 @@
 				<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
 				<span class="top-header-separator">|</span>
 				<a href="tel:17149934200">+1 714&nbsp;993&nbsp;4200</a>
+				<div class="search-wrapper">
+					<form id="search" action="/search" method="get" novalidate="novalidate">
+						<input type="text" name="query" placeholder="Search" />
+						<a href="#" id="search-submit">&nbsp;</a>
+					</form>
+				</div>
 			</div>
 		</div>
 		<div id="header">
@@ -138,11 +145,10 @@
 					<?php endforeach; ?>
 				</div>
 				<div class="footer-menu-section">
-					<a href="#">Platforms</a>
-					<a href="#">Commercial</a>
-					<a href="#">Regional/Business Jet</a>
-					<a href="#">Defense</a>
-					<a href="#">Rotor Wing</a>
+					<a href="/platforms">Platforms</a>
+					<?php foreach ($globalData['platformCategories'] as $p): ?>
+						<a href="/platforms/<?= $p->slug ?>"><?= ucwords($p->title) ?></a>
+					<?php endforeach; ?>
 				</div>
 				<div class="footer-menu-section">
 					<a href="/support">Support</a>
@@ -188,5 +194,5 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="/static/public/js/lib.js"></script>
 	<script src="/static/public/js/common.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-l8wyp7WNl5ViWFzPfUmRLKkqCpAR9Og&callback=initMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-l8wyp7WNl5ViWFzPfUmRLKkqCpAR9Og&callback=initMap" defer></script>
 </html>

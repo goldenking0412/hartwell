@@ -103,6 +103,19 @@ $(function() {
 
 	}
 
+	setInterval(function() {
+		$.get('/get-time', function(d) {
+			$.each(d, function(di, dv) {
+				$('.time[timezone="'+di+'"]').text(dv);
+			});
+		});
+	}, 30000);
+
+	$('#search-submit').on('click', function(e) {
+		e.preventDefault();
+		$('#search')[0].submit();
+	});
+
 	window.mySwipe = Swipe(document.getElementById('slider'), {
 		auto: 3000,
 		continuous: true

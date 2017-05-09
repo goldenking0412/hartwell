@@ -22,5 +22,5 @@
 
 	</div>
 
-	<div class="supplier-logos-fade-out"></div>
+	<!--<div class="supplier-logos-fade-out"></div>-->
 </div>

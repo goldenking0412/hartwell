@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\News;
 use App\Models\Position;
 use App\Models\Contact;
+use Illuminate\Http\Request;
 
 class HomeController extends BaseController
 {
@@ -86,6 +87,7 @@ class HomeController extends BaseController
 		return $this->renderView('career', [
 			'position' => $career,
 			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'platformCategories' => PlatformCategory::orderBy('delta')->get(),
 			'markets' => Market::orderBy('delta')->get(),
 			'showSubnav' => true,
 		]);
@@ -118,6 +120,7 @@ class HomeController extends BaseController
 		return $this->renderView('market', [
 			'market' => $category,
 			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'platformCategories' => PlatformCategory::orderBy('delta')->get(),
 			'markets' => Market::orderBy('delta')->get(),
 			'showSubnav' => true,
 		]);
@@ -178,6 +181,7 @@ class HomeController extends BaseController
 		return $this->renderView('category', [
 			'category' => $category,
 			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'platformCategories' => PlatformCategory::orderBy('delta')->get(),
 			'metaDescription' => $category->meta_description,
 		]);
 	}
@@ -193,7 +197,103 @@ class HomeController extends BaseController
 		return $this->renderView('news-item', [
 			'news' => $news,
 			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'platformCategories' => PlatformCategory::orderBy('delta')->get(),
 			'metaDescription' => $news->meta_description,
+		]);
+	}
+
+	public function search(Request $request)
+	{
+
+		$query = <<<EOF
+
+		SELECT * FROM (
+			SELECT
+				'page' AS type,
+				p.title AS title,
+				p.slug AS slug,
+				CONCAT_WS(
+					' ',
+					GROUP_CONCAT(CONCAT_WS(' ', bd.body, bd.body_2, bd.body_3) SEPARATOR ' '),
+					GROUP_CONCAT(CONCAT_WS(' ', bn.headline, bn.body) SEPARATOR ' ')
+				) AS body
+			FROM pages p
+			LEFT JOIN bands bd ON p.id = bd.page_id
+			LEFT JOIN banners bn ON p.id = bn.page_id
+			GROUP BY p.id
+			UNION
+			SELECT 'news' AS type, n.title AS title, n.slug AS slug, n.body AS body
+			FROM news n
+			UNION
+			SELECT
+				'product_category' AS type,
+				p.title AS title,
+				p.slug AS slug,
+				CONCAT_WS(
+					' ',
+					GROUP_CONCAT(CONCAT_WS(' ', bd.body, bd.body_2, bd.body_3) SEPARATOR ' '),
+					GROUP_CONCAT(CONCAT_WS(' ', bn.headline, bn.body) SEPARATOR ' ')
+				) AS body
+			FROM product_categories p
+			LEFT JOIN band_product_category bpc ON p.id = bpc.product_category_id
+			LEFT JOIN bands bd ON bpc.band_id = bd.id
+			LEFT JOIN banner_product_category bbpc ON p.id = bbpc.product_category_id
+			LEFT JOIN banners bn ON bbpc.banner_id = bn.id
+			GROUP BY p.id
+			UNION
+			SELECT
+				'platform_category' AS type,
+				p.title AS title,
+				p.slug AS slug,
+				CONCAT_WS(
+					' ',
+					GROUP_CONCAT(CONCAT_WS(' ', bd.body, bd.body_2, bd.body_3) SEPARATOR ' '),
+					GROUP_CONCAT(CONCAT_WS(' ', bn.headline, bn.body) SEPARATOR ' ')
+				) AS body
+			FROM platform_categories p
+			LEFT JOIN band_platform_category bpc ON p.id = bpc.platform_category_id
+			LEFT JOIN bands bd ON bpc.band_id = bd.id
+			LEFT JOIN banner_platform_category bbpc ON p.id = bbpc.platform_category_id
+			LEFT JOIN banners bn ON bbpc.banner_id = bn.id
+			GROUP BY p.id
+		) z
+		WHERE
+			z.title LIKE ?
+			OR z.body LIKE ?
+EOF;
+
+		$search = \Input::get('query');
+
+		$results = \DB::select($query, [
+			'%'.((string) $search).'%',
+			'%'.((string) $search).'%',
+		]);
+
+		if (empty($search)) {
+			$results = [];
+		}
+
+		return $this->renderView('search', [
+			'hideSubNav' => true,
+			'results' => $results,
+			'platformCategories' => PlatformCategory::orderBy('delta')->get(),
+			'productCategories' => ProductCategory::orderBy('delta')->get(),
+			'metaDescription' => '',
+		]);
+	}
+
+	public function getTime()
+	{
+		$la_time = new \DateTime('now', new \DateTimeZone('America/Los_Angeles'));
+		$ny_time = new \DateTime('now', new \DateTimeZone('America/New_York'));
+		$ln_time = new \DateTime('now', new \DateTimeZone('Europe/London'));
+		$hk_time = new \DateTime('now', new \DateTimeZone('Asia/Hong_Kong'));
+
+		return response()->json([
+			'la' => $la_time->format('H:i'),
+			'ny' => $ny_time->format('H:i'),
+			'ln' => $ln_time->format('H:i'),
+			'hk' => $hk_time->format('H:i'),
 		]);
 	}
 
