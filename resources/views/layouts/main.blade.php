@@ -136,7 +136,6 @@
 					<a href="/#who-we-are">Who We Are</a>
 					<a href="/#history">History</a>
 					<a href="/capabilities">Capabilities</a>
-					<a href="/resources/Hartwell_certifications.pdf">Our Certifications</a>
 				</div>
 				<div class="footer-menu-section">
 					<a href="/products">Products</a>
@@ -161,7 +160,6 @@
 					<a href="/human-resources">HR</a>
 					<a href="/contact">Contact</a>
 					<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
-					<a href="/resources/Website%20IP%20Listing%2001-30-2017.pdf">Our Patents</a>
 				</div>
 				<div class="footer-menu-section">
 					<?php foreach (\App\Models\FooterItem::orderBy('delta')->get()->toArray() as $fi): ?>
