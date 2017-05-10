@@ -171,7 +171,7 @@
 								$fil = '/resources/' . $fil;
 							}
 						?>
-						<a href="<?= $fil ?>">
+						<a href="<?= $fil ?>" target="_blank">
 							<?= $fi['name'] ?>
 						</a>
 					<?php endforeach ?>

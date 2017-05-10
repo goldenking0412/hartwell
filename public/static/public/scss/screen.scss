@@ -378,11 +378,11 @@ $altBlue: #385989;
 			border-top: 1px solid $black;
 			color: #5eb1e3;
 		}
-		font-size: 19px;
+		font-size: 18px;
 		color: $orange;
 		color: #16507d;
 		text-decoration: none;
-		font-weight: 500;
+		font-weight: 400 !important;
 		@include break(tablet) {
 			font-size: 16px;
 			padding: 0 10px;
@@ -637,6 +637,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 		line-height: 38px;
 		padding-right: 20px;
 		color: #106799;
+		color: rgb(2, 47, 59);
 		z-index: 105;
 		width: 100%;
 		text-align: center;
@@ -657,11 +658,12 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 .floating-logo {
 	$floatingLogoWidth: 405px;
 	$floatingLogoHeight: 277px;
-	width: $floatingLogoWidth * .65;
-	height: $floatingLogoHeight * .65;
+	width: $floatingLogoWidth * .65 * .70;
+	height: $floatingLogoHeight * .65 * .70;
 	display: block;
 	//background-image: url('../img/hartwell-banner-logo.png');
-	background-image: url('../img/hartwell_logo_white.png');
+	//background-image: url('../img/hartwell_logo_white.png');
+	background-image: url('../img/hartwell_new_logo.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
@@ -1226,6 +1228,7 @@ input[type="submit"],
 		font-size: 23px;
 		font-weight: bold;
 		color: #6d6e71;
+		color: rgb(2, 47, 59);
 		margin-bottom: 10px;
 		padding-bottom: 10px;
 		display: block;
@@ -1406,6 +1409,7 @@ input[type="submit"],
 			display: block;
 			text-decoration: none;
 			color: #106799;
+			color: rgb(2, 47, 59);
 			//@extend %roboto;
 			font-size: 23px;
 			line-height: 50px;
