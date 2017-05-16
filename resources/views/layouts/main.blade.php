@@ -21,7 +21,7 @@
 				<span class="top-header-separator">|</span>
 				<a href="/contact">Contact</a>
 				<span class="top-header-separator">|</span>
-				<a href="#">Order Entry</a>
+				<a href="http://weborder.hartwellcorp.com/esuite8/Default.aspx?appname=Store&tabname=Login">E-Comm</a>
 				<span class="top-header-separator">|</span>
 				<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
 				<span class="top-header-separator">|</span>
@@ -185,7 +185,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="by-beehive">site by Beehive</div>
+		<div class="by-beehive"><a href="http://beehiveagency.com">site by Beehive</a></div>
 		<?= View::make('mobile-menu')->render() ?>
 		</div>
 	</body>

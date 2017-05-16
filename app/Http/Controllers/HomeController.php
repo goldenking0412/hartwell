@@ -17,7 +17,7 @@ class HomeController extends BaseController
 
 	private function simplePage($key, $showSubnav = false, $extra = [])
 	{
-		$page = Page::with(['bands', 'banners'])->whereType($key)->first();
+		$page = Page::with(['bands.bandSlides', 'banners'])->whereType($key)->first();
 
 		$datas = array_merge($extra, [
 			'page' => $page,

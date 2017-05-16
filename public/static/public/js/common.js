@@ -263,6 +263,10 @@ $(function() {
 
 				$this.children(':not(.body)').css({
 					height: $body.height()
+				});
+
+				$this.find('.band-swipe').css({
+					height: $body.height()
 				})
 			});
 

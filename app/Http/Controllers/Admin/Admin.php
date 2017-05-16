@@ -107,7 +107,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('home')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('home')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -121,7 +121,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('aftermarket')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('aftermarket')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -135,7 +135,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('capabilities')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('capabilities')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -149,7 +149,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('contact')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('contact')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -163,7 +163,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('qualitycontrol')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('qualitycontrol')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -177,7 +177,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('hr')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('hr')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -191,7 +191,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('faarepair')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('faarepair')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -205,7 +205,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('news')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('news')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -219,7 +219,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('careers')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('careers')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -233,7 +233,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('platforms')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('platforms')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -383,7 +383,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('about')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('about')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -397,7 +397,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('clients')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('clients')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -411,7 +411,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('quality')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('quality')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 
@@ -425,7 +425,7 @@ class Admin extends InitController {
 	{
 		if ( $this->wantsData() ) {
 			return Response::json( array(
-				'item' => Page::whereType('certifications')->with(['bands', 'banners'])->first()->toArray(),
+				'item' => Page::whereType('certifications')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
 			) );
 		}
 

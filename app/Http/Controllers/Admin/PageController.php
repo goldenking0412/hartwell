@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Band;
+use App\Models\BandSlide;
 use App\Models\Banner;
 use Input;
 
@@ -72,6 +73,7 @@ class PageController extends ResourceController {
 						'image' => @$band->image,
 						'floating' => @$band->floating,
 						'map' => @$band->map,
+						'band_type' => @$band->band_type,
 					));
 				} else {
 					$new = Band::create( array(
@@ -85,8 +87,42 @@ class PageController extends ResourceController {
 						'image' => @$band->image,
 						'floating' => @$band->floating,
 						'map' => @$band->map,
+						'band_type' => @$band->band_type,
 					) );
 					$ids[] = $new->id;
+				}
+
+				$bs_ids = [];
+
+				if (isset($band->band_slides) && count($band->band_slides)) {
+					foreach ($band->band_slides as $key => $bs) {
+						if ( property_exists( $bs, 'id' ) ) {
+							$bs_ids[] = $bs->id;
+							$bs_found = BandSlide::find( $bs->id );
+							$bs_found->update(array(
+								'band_id' => @$band->id,
+								'delta' => @$bs->delta,
+								'image' => @$bs->image,
+							));
+						} else {
+							$bs_new = BandSlide::create( array(
+								'band_id' => @$band->id,
+								'delta' => @$bs->delta,
+								'image' => @$bs->image,
+							) );
+							$bs_ids[] = $bs_new->id;
+						}
+					}
+				}
+
+				if( ! empty( $bs_ids ) )
+					BandSlide::whereBandId( $page->id )->whereNotIn( 'id', $bs_ids )->delete();
+
+				if (isset($found)) {
+					$found->bandSlides()->sync($bs_ids);
+				}
+				if (isset($new)) {
+					$new->bandSlides()->sync($bs_ids);
 				}
 			}
 		}

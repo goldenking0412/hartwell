@@ -35,21 +35,54 @@
 			<div class="body">
 				<?= $band->body ?>
 			</div>
-			<div
-				class="img hide-mobile"
-				style="background-image: url('/bands/<?= $band->image ?>');"
-			></div>
-			<img class="mobile-only" src="/bands/<?= $band->image ?>" />
+			<?php if (! $band->band_type || $band->band_type === 'single'): ?>
+				<div
+					class="img hide-mobile"
+					style="background-image: url('/bands/<?= $band->image ?>');"
+				></div>
+				<img class="mobile-only" src="/bands/<?= $band->image ?>" />
+			<?php endif; ?>
+
+			<?php if ($band->band_type === 'multiple'): ?>
+				<div
+					class="img"
+				>
+					<div class="swipe swipe-item-slideshow band-swipe">
+						<div class="swipe-wrap">
+							@foreach ($band->bandSlides as $band_slide)
+								<div class="" style="background-image: url('/banners/<?= $band_slide->image ?>');">&nbsp;</div>
+							@endforeach
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
 		</div>
 		<?php endif; ?>
 
 		<?php if ($band->type === 'image-left-float'): ?>
 		<div class="para-col-right">
-			<div
-				class="img hide-mobile"
-				style="background-image: url('/bands/<?= $band->image ?>');"
-			></div>
-			<img class="mobile-only" src="/bands/<?= $band->image ?>" />
+			<?php if (! $band->band_type || $band->band_type === 'single'): ?>
+				<div
+					class="img hide-mobile"
+					style="background-image: url('/bands/<?= $band->image ?>');"
+				></div>
+				<img class="mobile-only" src="/bands/<?= $band->image ?>" />
+			<?php endif; ?>
+
+			<?php if ($band->band_type === 'multiple'): ?>
+				<div
+					class="img"
+				>
+					<div class="swipe swipe-item-slideshow band-swipe">
+						<div class="swipe-wrap">
+							@foreach ($band->bandSlides as $band_slide)
+								<div class="" style="background-image: url('/banners/<?= $band_slide->image ?>');">&nbsp;</div>
+							@endforeach
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
+
 			<div class="body">
 				<?= $band->body ?>
 			</div>

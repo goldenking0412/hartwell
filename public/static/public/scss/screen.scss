@@ -83,7 +83,9 @@ $altBlue: #385989;
 	font-size: 16px;
 	text-align: right;
 	padding: 30px 15px;
-	pointer-events: none;
+	a, a:visited {
+		color: inherit !important;
+	}
 }
 
 .italic {
@@ -814,7 +816,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 
 .para-col-right {
 	.body {
-		h3, p {
+		h3, p, ul {
 			margin-left: 20%;
 		}
 	}
@@ -826,7 +828,7 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 	}
 	@include break(mobile) {
 		.body {
-			p, h3 {
+			p, h3, ul {
 				max-width: 100%;
 				margin-left: 0;
 			}
@@ -907,13 +909,13 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 
 .para-col-right-1 {
 	.body {
-		h3, p {
+		h3, p, ul {
 			margin-left: 20%;
 		}
 	}
 	@include break(mobile) {
 		.body {
-			p, h3 {
+			p, h3, ul {
 				max-width: 100%;
 				margin-left: 0;
 			}
@@ -926,6 +928,12 @@ $jetStartHalfWidthPlusOne: $jetStartHalfWidth + 1;
 	margin-bottom: 40px;
 	overflow: hidden;
 	font-family: 'Roboto', sans-serif;
+	& > p {
+		font-size: 18px;
+		margin-bottom: 30px;
+		font-weight: bold;
+		text-align: center;
+	}
 	.recipient-group {
 		width: 50%;//33.333%;
 		float: left;
@@ -1071,6 +1079,11 @@ input[type="submit"],
 		height: 100%;
 		background-size: contain;
 		background-repeat: no-repeat;
+	}
+	&.band-swipe {
+		.swipe-wrap > div {
+			background-size: cover;
+		}
 	}
 }
 .item-slideshow {

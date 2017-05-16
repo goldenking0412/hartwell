@@ -2,9 +2,9 @@
 	<div class="outer b-clear">
 
 		<form id="contact-form" class="b-clear">
-
 			<div class="recipient-selector">
-				<?php foreach (['usa' => 'U.S.A', 'sales' => 'Sales', 'europe' => 'Europe', 'distributors' => 'Distributors', 'sales_representatives' => 'Sales Representatives'] as $grouping => $groupingLabel): ?>
+				<p>Please select your appropriate contact.</p>
+				<?php foreach (['usa' => 'U.S.A', 'sales' => 'Sales Support', 'europe' => 'Europe', 'distributors' => 'Distributors', 'sales_representatives' => 'Sales Representatives'] as $grouping => $groupingLabel): ?>
 					<?php if (${$grouping} && count(${$grouping})): ?>
 						<div class="recipient-group">
 							<h4><?= $groupingLabel ?></h4>
