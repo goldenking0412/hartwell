@@ -154,6 +154,7 @@
 					<a href="/support/aftermarket-support">After Market</a>
 					<a href="/support/faa-repair-station">FAA Repair</a>
 					<a href="/support/quality-control">Quality Control</a>
+					<a href="/patents">Hartwell Patents</a>
 				</div>
 				<div class="footer-menu-section">
 					<a href="/news">News</a>

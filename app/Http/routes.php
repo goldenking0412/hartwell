@@ -52,6 +52,7 @@ Route::get('/products/{slug?}', 'HomeController@productCategory');
 Route::get('/platforms', 'HomeController@platforms');
 Route::get('/platforms/{slug?}', 'HomeController@platformCategory');
 Route::get('/search', 'HomeController@search');
+Route::get('/patents', 'HomeController@patents');
 Route::get('/get-time', 'HomeController@getTime');
 
 // Products, News, Careers, Contact

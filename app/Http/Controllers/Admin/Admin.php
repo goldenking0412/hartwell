@@ -117,6 +117,20 @@ class Admin extends InitController {
 		);
 	}
 
+	public function getPatents()
+	{
+		if ( $this->wantsData() ) {
+			return Response::json( array(
+				'item' => Page::whereType('patents')->with(['bands.bandSlides', 'banners'])->first()->toArray(),
+			) );
+		}
+
+		return $this->renderView(
+			'Patents',
+			'admin.globals.page'
+		);
+	}
+
 	public function getAftermarketsupport()
 	{
 		if ( $this->wantsData() ) {

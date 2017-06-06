@@ -34,6 +34,11 @@ class HomeController extends BaseController
 		return $this->simplePage('home');
 	}
 
+	public function patents()
+	{
+		return $this->simplePage('patents');
+	}
+
 	public function support()
 	{
 		return redirect('/support/aftermarket-support');

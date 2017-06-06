@@ -38,6 +38,7 @@
 									<?= HTML::menu_link( 'admin/qualitycontrol', 'Quality Control' ) ?>
 									<?= HTML::menu_link( 'admin/hr', 'Human Resources' ) ?>
 									<?= HTML::menu_link( 'admin/contact', 'Contact' ) ?>
+									<?= HTML::menu_link( 'admin/patents', 'Patents' ) ?>
 									<!--
 									<?= HTML::menu_link( 'admin/about', 'About' ) ?>
 									<?= HTML::menu_link( 'admin/clients', 'Our Clients' ) ?>
