@@ -48,7 +48,7 @@ class ContactController extends BaseController
 		$inputs = Input::all();
 
 		Mail::send('emails.contact-form', ['inputs' => $inputs], function($message) use ($inputs) {
-			$message->to('ahripak@alexdoesit.com')
+			$message->to(Input::get('recipient'))
 				->subject('Hartwell Contact Form: ' . $inputs['name']);
 		});
 
