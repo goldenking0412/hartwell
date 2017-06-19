@@ -340,4 +340,37 @@ $(function() {
 
 		$(document).scrollTop($now.offset().top - 180);
 	});
+
+	$('#contact-form .form-submit-link').click(function(e) {
+		e.preventDefault();
+
+		//var linkString = 'mailto:foo@example.com?subject=' + encodeURIComponent('Contact Form Submission') + '&body=';
+
+		// $.each($('#contact-form').serializeArray(), function(i, v) {
+		// 	if (v.name !== 'g-recaptcha-response' && v.value !== '') {
+		// 		linkString += encodeURIComponent(ucfirst(v.name) + ': ') + encodeURIComponent(v.value) + "%0A%0A";
+		// 	}
+		// });
+
+		//$('.spinner-wrapper img').addClass('hot');
+		$(this).find('.form-submit-link').text('Sending...');
+		$('input').removeClass('error');
+
+		$.post('/contact', $('#contact-form').serialize(), function(response) {
+			//$('.spinner-wrapper img').removeClass('hot');
+			$(this).find('.form-submit-link').text('Send');
+			if (! response.success) {
+				if (response.field) {
+					$('input[name="' + response.field + '"]').addClass('error');
+				}
+				window.alert(response.message);
+			} else {
+				window.alert('The message has been sent.');
+				$('#contact-form')[0].reset();
+				// $('.contact-wrapper').slideUp(200, function() {
+				// 	$('.contact-success-wrapper').slideDown(200);
+				// });
+			}
+		});
+	});
 });

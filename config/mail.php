@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mandrillapp.com'),
+    'host' => env('MAIL_HOST', 'email-smtp.us-west-2.amazonaws.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'noreply@beehiveagency.xyz', 'name' => 'Adamsrite Website'],
+    'from' => ['address' => 'noreply@hartwell.beehiveagency.xyz', 'name' => 'Hartwell Web'],
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME', 'noreply@beehiveagency.xyz'),
+    'username' => env('MAIL_USERNAME', 'AKIAJYIEKGCJXQZTXWPQ'),
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'password' => env('MAIL_PASSWORD', '0Bi76i1DNFhJ6uwy8eDrhg'),
+    'password' => env('MAIL_PASSWORD', 'Audl7TDgZ9jAWMvf92U5tkrOhz7EHwUmSN/t6LPdJYYy'),
 
     /*
     |--------------------------------------------------------------------------

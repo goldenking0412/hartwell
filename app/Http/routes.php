@@ -43,6 +43,7 @@ Route::get('/news/{slug?}', 'HomeController@newsItem');
 Route::get('/human-resources', 'HomeController@hr');
 Route::get('/capabilities', 'HomeController@capabilities');
 Route::get('/contact', 'HomeController@contact');
+Route::post('/contact', 'ContactController@submit');
 Route::get('/support', 'HomeController@support');
 Route::get('/support/aftermarket-support', 'HomeController@aftermarketSupport');
 Route::get('/support/faa-repair-station', 'HomeController@faaRepairStation');

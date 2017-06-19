@@ -24,30 +24,37 @@ class ContactController extends BaseController
 		$fields = [
 			'name' => 'Name',
 			'email' => 'Email',
+			'recipient' => 'Contact',
 			//'g-recaptcha-response' => 'Human verification',
 		];
 
-		// foreach ($fields as $key => $value) {
-		// 	if (! Input::has($key)) {
-		// 		$response['success'] = false;
-		// 		$response['message'] = $value . ' is required';
-		// 		$response['field'] = $key;
-		// 		return Response::json($response);
-		// 	}
-		// }
+		if (! filter_var(Input::get('recipient'), FILTER_VALIDATE_EMAIL)) {
+			$response['success'] = false;
+			$response['message'] = 'There was an error sending the message.';
+			return Response::json($response);
+		}
 
-		$submission = Submission::create(Input::all());
+		foreach ($fields as $key => $value) {
+			if (! Input::has($key)) {
+				$response['success'] = false;
+				$response['message'] = $value . ' is required';
+				$response['field'] = $key;
+				return Response::json($response);
+			}
+		}
+
+		//$submission = Submission::create(Input::all());
 
 		$inputs = Input::all();
 
-		// Mail::send('emails.contact-form', ['inputs' => $inputs], function($message) use ($inputs) {
-		// 	$message->to('ahripak@alexdoesit.com')
-		// 		->subject('Contact Form Submission: ' . $inputs['name']);
-		// });
+		Mail::send('emails.contact-form', ['inputs' => $inputs], function($message) use ($inputs) {
+			$message->to('ahripak@alexdoesit.com')
+				->subject('Hartwell Contact Form: ' . $inputs['name']);
+		});
 
 		return Response::json([
 			'success' => true,
-			'model' => $submission->toArray(),
+			//'model' => $submission->toArray(),
 		]);
 	}
 
