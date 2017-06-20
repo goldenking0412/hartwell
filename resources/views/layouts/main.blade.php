@@ -23,7 +23,7 @@
 				<span class="top-header-separator">|</span>
 				<a href="http://weborder.hartwellcorp.com/esuite8/Default.aspx?appname=Store&tabname=Login">E-Comm</a>
 				<span class="top-header-separator">|</span>
-				<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
+				<a href="http://216.237.48.25/publications/">CMM Login</a>
 				<span class="top-header-separator">|</span>
 				<a href="tel:17149934200">+1 714&nbsp;993&nbsp;4200</a>
 				<div class="search-wrapper">
@@ -160,7 +160,7 @@
 					<a href="/news">News</a>
 					<a href="/human-resources">HR</a>
 					<a href="/contact">Contact</a>
-					<a href="http://www.hartwellcorp.com/publications/">CMM Login</a>
+					<a href="http://216.237.48.25/publications/">CMM Login</a>
 				</div>
 				<div class="footer-menu-section">
 					<?php foreach (\App\Models\FooterItem::orderBy('delta')->get()->toArray() as $fi): ?>
