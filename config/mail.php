@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'noreply@hartwell.beehiveagency.xyz', 'name' => 'Hartwell Web'],
+    'from' => ['address' => 'info@hartwellcorp.com', 'name' => 'Hartwell Web'],
 
     /*
     |--------------------------------------------------------------------------
