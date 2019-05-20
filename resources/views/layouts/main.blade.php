@@ -9,6 +9,28 @@
 		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700,700i" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 		<link rel="stylesheet" href="/static/public/stylesheets/screen.css">
+		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+		<script>
+		window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+		  "palette": {
+		    "popup": {
+		      "background": "#000"
+		    },
+		    "button": {
+		      "background": "#f1d600"
+		    }
+		  },
+		  "position": "top",
+		  "content": {
+		  	"message": "By continuing to browse or closing this window by clicking \"X\" you are providing consent to the storing of cookies on your device to enhance site navigation and analyze site usage. You can reject cookies by changing your browser settings.",
+		  	"link": "Cookie Policy",
+		  	"dismiss": "x",
+		  	"href": "#"
+		  }
+		})});
+		</script>
 	</head>
 	<body>
 		<div class="main-container">
