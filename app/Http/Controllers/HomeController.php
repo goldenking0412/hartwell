@@ -326,4 +326,12 @@ EOF;
 		// 	'showSubnav' => true,
 		// ]);
 	}
+
+	public function cookiepolicy()
+	{
+		return $this->renderView('cookiepolicy', [
+			'productCategories' => ProductCategory::all(),
+			'platformCategories' => PlatformCategory::all()
+		]);
+	}
 }

@@ -55,6 +55,7 @@ Route::get('/platforms/{slug?}', 'HomeController@platformCategory');
 Route::get('/search', 'HomeController@search');
 Route::get('/patents', 'HomeController@patents');
 Route::get('/get-time', 'HomeController@getTime');
+Route::get('/cookie-policy', 'HomeController@cookiepolicy');
 
 // Products, News, Careers, Contact
 

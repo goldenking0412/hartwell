@@ -9,28 +9,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700,700i" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 		<link rel="stylesheet" href="/static/public/stylesheets/screen.css">
-		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-		<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-		<script>
-		window.addEventListener("load", function(){
-		window.cookieconsent.initialise({
-		  "palette": {
-		    "popup": {
-		      "background": "#000"
-		    },
-		    "button": {
-		      "background": "#f1d600"
-		    }
-		  },
-		  "position": "top",
-		  "content": {
-		  	"message": "By continuing to browse or closing this window by clicking \"X\" you are providing consent to the storing of cookies on your device to enhance site navigation and analyze site usage. You can reject cookies by changing your browser settings.",
-		  	"link": "Cookie Policy",
-		  	"dismiss": "x",
-		  	"href": "#"
-		  }
-		})});
-		</script>
+		<link rel="stylesheet" href="/static/public/stylesheets/cookie.css">
 	</head>
 	<body>
 		<div class="main-container">
@@ -86,6 +65,15 @@
 			<div id="mobile-header-number" class="mobile-only">
 				<a href="tel:17149934200">+1 714 993 4200</a>
 			</div>
+			<section class="cookies_sch" data-swiftype-index="false" id="cookies_section">
+				<div class="cookies_content">
+					<p>
+            By continuing to browse or closing this window by clicking "X" you are providing consent to the storing of cookies on your device to enhance site navigation and analyze site usage. You can reject cookies by changing your browser settings. 
+            <a class="cookie-link" href="/cookie-policy">Cookie Policy</a>
+        	</p>
+				</div>
+				<a href="#" class="close-cookie"></a>
+			</section>
 		</div>
 		<?php if (stristr($currentRoute, 'support/')): ?>
 			<div id="sub-header">
@@ -136,20 +124,22 @@
 			<?= $content ?>
 		<?php endif; ?>
 
-		<div class="product-types-outer-wrapper">
-		<div class="product-types outer">
-			<?php foreach ($globalData['productCategories'] as $productType): ?>
+		<?php if (!stristr($currentRoute, 'cookie-policy')): ?>
+			<div class="product-types-outer-wrapper">
+				<div class="product-types outer">
+					<?php foreach ($globalData['productCategories'] as $productType): ?>
 
-			<a href="/products/<?= $productType->slug ?>" class="product-type">
-				<div class="product-type-label">
-					<?= ucwords($productType->title) ?>
+					<a href="/products/<?= $productType->slug ?>" class="product-type">
+						<div class="product-type-label">
+							<?= ucwords($productType->title) ?>
+						</div>
+						<img src="/product-categories/<?= $productType->image ?>" />
+					</a>
+
+					<?php endforeach; ?>
 				</div>
-				<img src="/product-categories/<?= $productType->image ?>" />
-			</a>
-
-			<?php endforeach; ?>
-		</div>
-		</div>
+			</div>
+		<?php endif; ?>
 
 		<div id="footer">
 			<div class="outer">
@@ -198,6 +188,9 @@
 							<?= $fi['name'] ?>
 						</a>
 					<?php endforeach ?>
+					<a href="#" class="privacy-popup">Privacy Notice</a>
+					<a href="#">Customer Privacy Notice</a>
+					<a href="#">Vendor Privacy Notice</a>
 				</div>
 				<div class="footer-menu-info">
 					<img src="/static/public/img/bottom-logo.png" />
@@ -211,9 +204,22 @@
 		<div class="by-beehive"><a href="http://beehiveagency.com">site by Beehive</a></div>
 		<?= View::make('mobile-menu')->render() ?>
 		</div>
+		<div id="privacyBack"></div>
+		<div id="privacyDialogWrapper" title="">
+			<div id="privacyDialog">
+				<div class="privacy-dialog-header">
+					<span>Privacy Notice Pursuant to Article 13 GDPR</span>
+				</div>
+				<p>Hartwell Corporation, 900 S. Richfield, Placentia, CA 92780 is the ‘Controller’ of the information you have provided.<br/>We collect and process your personal data for the purpose of allowing you to access website content and providing you information about our products.<br/>The legal basis for processing your information is necessary for the purposes of the overriding legitimate interests pursued by the controller or by a third party.<br/>The legitimate interests of the controller of the information are the processing of your data is required for security purpose of the website content and for providing product information to you and for direct marketing.<br/>The period for storage of your data depends and is determined by factors such as the typical need for such information and storage and space constraints.<br/>We may process the information to a third party email marketing firm and IT hosting company for the purpose set out above.<br/>Hartwell Corporation, Email marketing and IT hosting companies are located outside the European Union. In the event that the recipient country does not ensure a level of data protection equivalent to that of the European Union, the company undertakes to take all appropriate guarantees, either on the basis of an adequacy decision such as that for the Privacy Shield, or, in the absence of such a decision, on the basis of appropriate guarantees, in particular those drawn up on the model of standard contractual clauses made public by the European Commission a copy of which may be requested at the follow e-mail address GDPR@hartwellcorp.com.<br/>You have right to access, modify, rectify, limit and to portability or delete any personal data as well as a right of opposition, if necessary subject to legitimate and imperative reasons, to the processing of these data.<br/>If you wish to exercise your rights, you can contact GDPR@hartwellcorp.com.<br/>You also have the right to lodge a complaint with a supervisory authority.<br/>You have the right to withdraw your consent to the processing of your data anytime. The withdrawal does not affect the lawfulness of processing based on your consent before its withdrawal.<br/>If you would like to withdraw your consent, please contact GDPR@hartwellcorp.com.<br/>You have the right to object to the processing of your personal data for marketing purposes at any time.<br/>You have the right to object to the processing of your personal data at any time on grounds relating to your particular situation. We ask you to provide reasons and legitimate interest to back up your objection. In case of a legal objection, we shall no longer process your personal data unless we have compelling legitimate grounds for the processing which override your interests, rights and freedoms of the data subject or for the establishment, exercise or defence of legal claims. We shall inform you on the grounds of our decisions.<br/>
+				</p>
+			</div>
+			
+		</div>
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="/static/public/js/lib.js"></script>
 	<script src="/static/public/js/common.js"></script>
+	<script src="/static/public/js/cookie.js"></script>
+	<script src="/static/public/js/js-cookie.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-l8wyp7WNl5ViWFzPfUmRLKkqCpAR9Og&callback=initMap" defer></script>
 </html>
