@@ -189,8 +189,6 @@
 						</a>
 					<?php endforeach ?>
 					<a href="#" class="privacy-popup">Privacy Notice</a>
-					<a href="#">Customer Privacy Notice</a>
-					<a href="#">Vendor Privacy Notice</a>
 				</div>
 				<div class="footer-menu-info">
 					<img src="/static/public/img/bottom-logo.png" />
