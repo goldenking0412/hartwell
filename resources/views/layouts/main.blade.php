@@ -188,7 +188,6 @@
 							<?= $fi['name'] ?>
 						</a>
 					<?php endforeach ?>
-					<a href="#" class="privacy-popup">Privacy Notice</a>
 				</div>
 				<div class="footer-menu-info">
 					<img src="/static/public/img/bottom-logo.png" />
